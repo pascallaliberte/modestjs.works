@@ -43,6 +43,7 @@
     "postcss-scss": "^1.0.2",
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
+    "sass-rem": "^2.0.1",
     "style-loader": "^0.18.2",
     "sw-precache": "^5.2.0",
     "webpack": "^4.1.1",
@@ -53,6 +54,7 @@
     "webpack-pwa-manifest": "^3.1.6"
   },
   "dependencies": {
+    "awesome-sass-easing": "^1.1.2",
     "bootstrap": "^4.1.3",
     "js-yaml": "^3.12.0",
     "normalize.css": "^7.0.0"

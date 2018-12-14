@@ -1,7 +1,9 @@
+@import "../node_modules/awesome-sass-easing/_sass-easing.scss";
+
 // Variables
 
 $container-width: 1200px;
-$container-padding: 30px;
+$container-padding: 18px;
 
 $primary-color: #26B4A5;
 $text-color: #676767;
@@ -16,12 +18,59 @@ $system-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-S
 $primary-font-family: 'Lato', $system-font-family;
 $secondary-font-family: 'Inconsolata', monospace, $system-font-family;
 
+$reference-width-xs:    375px;
+$reference-width-xs-until: 525px;
+$reference-width-md:    768px;
+$reference-width-md-until: 850px;
+$reference-width-xl: 1024px;
+
 // Mixin
 
 @mixin container($padding) {
   max-width: $container-width;
   padding: 0 $padding;
   margin: auto;
+}
+
+@media only screen and (max-width: $reference-width-xs-until) {
+  html {
+    font-size: root-vw-font-size($reference-width-xs);
+  }
+  
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+    
+  main {
+    max-width: 100%;
+    padding-left: $container-padding;
+    padding-right: $container-padding;
+  }
+}
+
+@media only screen and (min-width: ($reference-width-xs-until + 1px)) and (max-width: $reference-width-md-until) {
+  html {
+    font-size: root-vw-font-size($reference-width-md);
+  }
+    
+  main {
+    max-width: rem(700px);
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: ($reference-width-md-until + 1px)) {
+  html {
+    font-size: root-vw-font-size($reference-width-xl);
+  }
+    
+  main {
+    flex: 1;
+    width: rem(496px);
+    padding: rem(18px);
+    margin-left: rem(275px);
+  }
 }
 
 
@@ -39,18 +88,17 @@ body {
   &::before {
     position: absolute;
     content: '';
-    width: 70%;
+    width: calc(100vw - 1.8rem);
     background-color: white;
     top: 0;
     right: 0;
     bottom: 0;
     z-index: -10;
+    
+    @media (min-width: $reference-width-md-until) {
+      width: calc(100vw - 27.5rem);
+    }
   }
-}
-
-main {
-  flex: 1;
-  width: 100%;
 }
 
 a {
