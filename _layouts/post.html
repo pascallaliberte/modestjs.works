@@ -11,10 +11,6 @@ layout: default
       {{ content }}
     </div>
 
-    <div class="post__comments">
-    {% if site.disqus.shortname %}
-      {% include disqus_comments.html %}
-    {% endif %}
-    </div>
+    {% include email-sign-up-form.html %}
   </div>
 </article>
