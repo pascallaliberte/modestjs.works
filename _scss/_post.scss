@@ -1,0 +1,41 @@
+.post {
+  
+  margin-top: 80px;
+  
+  h1 {
+    color: $primary-dark-color;
+    font-weight: bold;
+    font-family: $mono-font-family;
+    font-size: rem(32px);
+    line-height: (33 / 32);
+    
+    margin-bottom: rem(44px);
+  }
+  
+  h2 {
+    font-size: rem(18px);
+    line-height: (20/18);
+    text-transform: uppercase;
+    margin-top: rem(53px);
+    margin-bottom: 1em;
+    font-family: $mono-font-family;
+    color: $primary-dark-color;
+    letter-spacing: 0.3em;
+    font-weight: bold;
+  }
+  
+  img {
+    border: rem(36px) solid transparentize($primary-color, .88);
+    width: calc(100% + 7.2rem);
+    margin-left: rem(-36px);
+    height: auto;
+  }
+  
+  pre.highlight {
+    padding: rem(18px);
+    margin-left: rem(-18px);
+    margin-right: rem(-18px);
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+}
