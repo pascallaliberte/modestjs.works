@@ -44,8 +44,17 @@ $reference-width-xl: 1024px;
     
   main {
     max-width: 100%;
-    padding-left: $container-padding;
+    padding-left: $container-padding * 2;
     padding-right: $container-padding;
+    
+    font-size: rem(14px);
+    line-height: (25 / 18);
+    
+    margin-bottom: rem(100px);
+  }
+  
+  body::before {
+    width: calc(100vw - 1.8rem);
   }
 }
 
@@ -55,8 +64,18 @@ $reference-width-xl: 1024px;
   }
     
   main {
-    max-width: rem(700px);
-    margin: 0 auto;
+    padding: rem(18px);
+    width: rem(496px);
+    margin-left: rem(100px);
+    
+    font-size: rem(18px);
+    line-height: (25 / 18);
+    
+    margin-bottom: rem(100px);
+  }
+  
+  body::before {
+    width: calc(100vw - 10rem);
   }
 }
 
@@ -67,22 +86,18 @@ $reference-width-xl: 1024px;
     
   main {
     flex: 1;
-    width: rem(496px);
     padding: rem(18px);
+    width: rem(496px);
     margin-left: rem(257px);
     
     font-size: rem(18px);
     line-height: (25 / 18);
     
-    p, ul, ol {
-      margin-bottom: 1.5em;
-    }
-    
-    li {
-      margin-bottom: 1em;
-    }
-    
     margin-bottom: rem(100px);
+  }
+  
+  body::before {
+    width: calc(100vw - 25.7rem);
   }
 }
 
@@ -101,16 +116,11 @@ body {
   &::before {
     position: absolute;
     content: '';
-    width: calc(100vw - 1.8rem);
     background-color: white;
     top: 0;
     right: 0;
     bottom: 0;
     z-index: -10;
-    
-    @media (min-width: $reference-width-md-until) {
-      width: calc(100vw - 25.7rem);
-    }
   }
 }
 
@@ -123,6 +133,15 @@ a {
     color: $primary-color;
   }
 }
+
+p, ul, ol {
+  margin-bottom: 1.5em;
+}
+
+li {
+  margin-bottom: 1em;
+}
+
 
 
 // Shared

@@ -4,5 +4,9 @@
   
   svg {
     margin-left: rem(-35px);
+    
+    @media only screen and (max-width: $reference-width-xs-until) {
+      margin-left: rem(-28px);
+    }
   }
 }
