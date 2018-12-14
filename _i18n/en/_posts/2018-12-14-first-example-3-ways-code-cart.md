@@ -67,3 +67,187 @@ function broadcastNewCartQuantity() {
   document.dispatchEvent(event)
 }
 ```
+
+The second challenge will be about setting the subtotals. For that, two issues pop up:
+
+1. We need to associate the quantity field to the subtotal field on the same line. For this, we'll use the `data-product-id` attribute on both the quantity field and the subtotal element.
+2. We need to keep track of the price of the item. For this, we'll use the `data-item-price` attribute on the subtotal element.
+
+```html
+<input type="number" data-behavior="cart-item-quantity" 
+ data-product-id="sd001" value="1" />
+<!-- ... -->
+<span class="cart-item-price-subtotal" data-behavior="cart-item-subtotal"
+ data-product-id="sd001"
+ data-item-price="15.99" data-item-subtotal="15.99">15.99</span>
+```
+
+That way, when the quantity field is updated, we'll just look on the page for the subtotal element with the same price id, and do the multiplication against the price and the quantity to update the subtotal.
+
+For the `change` listener on the quantity field, let's set it up on the whole document. That will allow us to set the event listener once, and not have to add it again if we replace the cart's markup with an updated cart coming from the server-side.
+
+```js
+function enableQuantityFields() {
+  document.addEventListener('change', (event) => {
+    // make sure the change event came from the quantity field
+    if (event.target.getAttribute('data-behavior') !== 'cart-item-quantity') return
+    updateItemSubtotal(event)
+    broadcastNewCartQuantity()
+  })
+}
+
+enableQuantityFields()
+```
+
+Notice too how we're using the `data-behavior` attribute instead of using an html `class` or `id` to associate our Javascript with an element on the page. That allows designers to change the classes freely without fear of affecting the behaviour.
+
+That trick comes from the folks at Basecamp. This next strategy comes from the folks at Basecamp too: Stimulus.
+
+## Strategy 2: Stimulus
+
+[Stimulus][stimulus] is a small javascript framework allowing to automate adding behaviour to page elements as they're added to the page. Just like `css` automatically adds styling when an element is added to the page, `stimulus` watches the `DOM` (Document Object Model) for new elements, and wires them up with behaviour defined in Stimulus controllers.
+
+[stimulus]: https://stimulusjs.org
+
+A controller looks like this:
+
+```js
+// cart-quantity_controller.js
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  static targets = ["quantity"]
+  
+  updateQuantity(event) {
+    if (!this.hasQuantityTarget) return
+    
+    if (!event.detail || !event.detail.newQuantity) return
+    
+    this.quantityTarget.textContent = event.detail.newQuantity
+  }
+}
+```
+
+That `updateQuantity` method handles receiving an event fired at the document. To associate that controller method with an actual event, that's done directly in the `html` of the page.
+
+```html
+<div class="col text-right"
+ data-controller="cart-quantity"
+ data-action="cart-quantity-updated@document->cart-quantity#updateQuantity">
+  Cart: <strong data-target="cart-quantity.quantity">2</strong>
+</div>
+```
+
+This bit of html reads like this:
+
+* this div is controlled by the `cart-quantity` controller
+* when the `action` `cart-quantity-updated` is dispatched on the `document`, fire the `cart-quantity` method called `updatedQuantity` with that event data passed as a parameter.
+* within the `cart-quantity` controller, the quantity element is accessible via the `quantity` target (via the `quantityTarget` shorthand)
+
+The `cart` can also be governed by its own controller. And inside the `cart`, there can be multiple elements governed by a `cart-item` controller.
+
+The quantity field can then be defined to have two controllers handle its `change` event, both the `cart` controller and the `cart-item` controller.
+
+```html
+<div class="cart" data-controller="cart">
+  <div class="cart-items">
+    <!-- ... -->
+    <div data-controller="cart-item" class="cart-item">
+      <!-- ... -->
+      <input type="number" value="{{ item.quantity }}" 
+       data-target="cart-item.quantity cart.quantity"
+       data-action="change->cart#updateSubtotal change->cart-item#updateSubtotal change->cart#broadcastNewQuantity"
+       data-item-price="{{ item.unit_price }}"
+       />
+      <!-- ... -->
+      <span class="cart-item-price-subtotal"
+       data-target="cart-item.subtotal">{{ item.subtotal }}</span>
+    </div>
+  </div>
+  <!-- ... -->
+  Subtotal
+  <!-- ... -->
+  <span class="cart-subtotal-price-subtotal"
+   data-target="cart.subtotal" >{{ site.data.cart.subtotal }}</span>
+</div>
+```
+
+And the `cart` controller would look like this:
+
+```js
+import { Controller } from "stimulus"
+import roundCurrency from "../lib/roundCurrency"
+
+export default class extends Controller {
+  static targets = ["quantity", "subtotal"]
+  
+  updateSubtotal() {
+    // let subtotal = ...
+    
+    // ...
+    this.subtotalTarget.textContent = roundCurrency(subtotal)
+  }
+  
+  broadcastNewQuantity() {
+    // ...
+    document.dispatchEvent(event)
+  }
+}
+
+```
+
+Stimulus makes the javascript behaviour layer more readable and pleasant.
+
+Both the Vanilla JS example and the Stimulus example rely on the server to generate the markup.
+
+The state (the data) is stored in data attributes in the markup itself. This last strategy explores what it's like to create the markup in the javascript, and have it react to changes in the values of the data.
+
+## Strategy 3: Spot view-models
+
+View-models (like Vue and React) are made to update the DOM when changes in the data occur. While Stimulus listens to changes in the DOM to fire methods in the controller, View-models listen to changes in the model (the data) to change the view (the markup).
+
+This can be handy when changes in the data can end up creating multiple permutations to a view.
+
+While our cart example doesn't produce many permutations in the view, let's still see how we can integrate a view-models without going all-in with a Single-Page application (SPA).
+
+To avoid the SPA approach, we'll use view-models just in the spots of the page where we need reactivity.
+
+* the `cart` will be managed by its own view-model
+* the `cart-quantity` could be managed using a plain vanilla component like in Strategy 1, but let's manage it using a view-model too.
+
+In this case, let's use [Vue.js][vuejs], which is approachable enough to just use it in spots on an overall back-end driven page.
+
+[vuejs]: https://vuejs.org
+
+Here's the `.vue` file for the `cart-quantity` view-model:
+
+```vue
+<template lang="html">
+  <span>
+    Cart: <strong>{% raw  %}{{ quantity }}{% endraw %}</strong>
+  </span>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      quantity: {},
+    }
+  },
+  mounted() {
+    this.quantity = JSON.parse(this.$el.parentNode.getAttribute('data-quantity'))
+    document.addEventListener('cart-quantity-updated', this.getNewQuantity)
+  },
+  beforeDestroy() {
+    document.removeEventListener('cart-quantity-updated', this.getNewQuantity)
+  },
+  methods: {
+    getNewQuantity(event) {
+      if (!event.detail || !event.detail.newQuantity) return
+      this.quantity = event.detail.newQuantity
+    }
+  }
+}
+</script>
+```
