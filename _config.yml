@@ -1,0 +1,64 @@
+### Welcome to Jekyll Webpack Boilerplate
+#
+# This config file contains the config of your webpages
+# You may also want to update /config/webpack.pwa.js in case you want to generate a Progressive Web App
+
+title: Modest JS Works
+email: pascal@pascallaliberte.me
+description: 
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+theme_color: '#605aa4'
+twitter_username: pascallaliberte
+github_username:  pascallaliberte
+author: Pascal Laliberté
+logo: assets/images/large-logo.png
+twitter:
+  username: pascallaliberte
+social:
+  name: Pascal Laliberté
+  links:
+    - https://twitter.com/pascallaliberte
+    - https://github.com/pascallaliberte
+
+languages: ["en"]
+ampdir: amp
+
+### Google webmaster tools, Google Analytics, Doorbell and Cookie consent uncomment and put the API key
+#webmaster_verifications:
+#  google: verification_code
+#google_analytics: id
+#doorbell:
+#  id: doorbell_id
+#  appKey: doorbell_appKey
+
+#cookie_consent: true
+
+### Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  # - octopress-minify-html
+  - jekyll-multiple-languages-plugin
+  # - amp-jekyll
+
+### Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - _src
+  - _images
+  - LICENSE
+  - package.json
+  - README.md
+  - webpack.config.js
+  - yarn-error.log
+  - yarn.lock
+  - config
+  - optimization-fix
+  - optimization-fix-this-file-is-ignored.js
+  - icon.png
