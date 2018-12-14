@@ -1,0 +1,12 @@
+
+.intro {
+  font-family: $mono-font-family;
+  font-display: fallback;
+  color: $primary-color;
+  font-size: rem(26px);
+  line-height: (27 / 26);
+  
+  @media (min-width: $reference-width-md-until + 1px) {
+    margin-right: rem(80px);
+  }
+}

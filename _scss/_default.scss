@@ -16,7 +16,7 @@ $font-xs: 16px;
 
 $system-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 $primary-font-family: 'Lato', $system-font-family;
-$secondary-font-family: 'Inconsolata', monospace, $system-font-family;
+$mono-font-family: 'Inconsolata', monospace, $system-font-family;
 
 $reference-width-xs:    375px;
 $reference-width-xs-until: 525px;
@@ -69,7 +69,20 @@ $reference-width-xl: 1024px;
     flex: 1;
     width: rem(496px);
     padding: rem(18px);
-    margin-left: rem(275px);
+    margin-left: rem(257px);
+    
+    font-size: rem(18px);
+    line-height: (25 / 18);
+    
+    p, ul, ol {
+      margin-bottom: 1.5em;
+    }
+    
+    li {
+      margin-bottom: 1em;
+    }
+    
+    margin-bottom: rem(100px);
   }
 }
 
@@ -96,7 +109,7 @@ body {
     z-index: -10;
     
     @media (min-width: $reference-width-md-until) {
-      width: calc(100vw - 27.5rem);
+      width: calc(100vw - 25.7rem);
     }
   }
 }
