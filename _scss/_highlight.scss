@@ -1,4 +1,4 @@
-/* from http://jwarby.github.io/jekyll-pygments-themes/languages/javascript.html */
+/* Adapted from http://jwarby.github.io/jekyll-pygments-themes/languages/javascript.html */
 
 .highlight code, .highlight pre {
 color:#fdce93;
@@ -135,4 +135,8 @@ color:#9ac39f;
 
 .highlight .nb,.preview-zenburn .highlight .nc,.preview-zenburn .highlight .nf,.preview-zenburn .highlight .bp,.preview-zenburn .highlight .vc {
 color:#efef8f;
+}
+
+.highlight .c1 {
+  color: #999;
 }
