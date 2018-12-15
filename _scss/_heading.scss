@@ -7,6 +7,9 @@
     margin-top: rem(1px);
     display: block;
     
+    width: rem(165px);
+    height: auto;
+    
     @media only screen and (max-width: $reference-width-xs-until) {
       margin-left: rem(-28px);
     }
