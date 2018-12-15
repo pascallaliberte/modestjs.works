@@ -7,7 +7,7 @@ author: Pascal Laliberté
 
 As a first example, let's take a shopping cart. Like this one:
 
-![cart example](/images/post/cart-example-01.jpg)
+![cart example](/assets/images/post/cart-example-01.jpg)
 
 That whole page could be managed via a Single-Page Application (SPA), but let's see how to make this more modest. That means the markup will be prepared server-side, and we'll add behaviour via javascript.
 
