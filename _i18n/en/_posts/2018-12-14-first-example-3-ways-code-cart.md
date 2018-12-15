@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "First example: 3 modest ways to code a cart"
+title:  "First Example: 3 Modest Ways to Code a Cart Page"
 categories: book sample
 author: Pascal Laliberté
 ---
@@ -9,14 +9,14 @@ As a first example, let's take a shopping cart. Like this one:
 
 ![cart example](/assets/images/post/cart-example-01.jpg)
 
-That whole page could be managed via a Single-Page Application (SPA), but let's see how to make this more modest. That means the markup will be prepared server-side, and we'll add behaviour via javascript.
+That whole page could be managed via a Single-Page Application (SPA), but let's see how to make this more modest. That means the markup will be prepared server-side, and we'll add behaviour via JavaScript.
 
 On this page, there are two components in need of some added behaviour:
 
 1. the `cart`, listing the items in the middle of the page, allowing the user to change the quantity of each item
 2. the `cart-quantity`, in the top right, showing the overall quantity in the cart
 
-Modern JS allows us to define the javascript code for each component separately, and then combined together using a compiler like webpack, and so that's what we'll do.
+Modern JS allows us to define the JavaScript code for each component separately, and then combined together using a compiler like webpack, and so that's what we'll do.
 
 ## Strategy 1: Vanilla JS
 
@@ -104,7 +104,7 @@ function enableQuantityFields() {
 enableQuantityFields()
 ```
 
-Notice too how we're using the `data-behavior` attribute instead of using an html `class` or `id` to associate our Javascript with an element on the page. That allows designers to change the classes freely without fear of affecting the behaviour.
+Notice too how we're using the `data-behavior` attribute instead of using an html `class` or `id` to associate our JavaScript with an element on the page. That allows designers to change the classes freely without fear of affecting the behaviour.
 
 That trick comes from the folks at Basecamp. This next strategy comes from the folks at Basecamp too: Stimulus.
 
@@ -115,7 +115,7 @@ That trick comes from the folks at Basecamp. This next strategy comes from the f
 [stimulus-demo]: https://cart-stimulus.modestjs.works
 [stimulus-repo]: https://github.com/pascallaliberte/examples.modestjs.works/tree/master/cart/stimulus
 
-[Stimulus][stimulus] is a small javascript framework allowing to automate adding behaviour to page elements as they're added to the page. Just like `css` automatically adds styling when an element is added to the page, `stimulus` watches the `DOM` (Document Object Model) for new elements, and wires them up with behaviour defined in Stimulus controllers.
+[Stimulus][stimulus] is a small JavaScript framework allowing to automate adding behaviour to page elements as they're added to the page. Just like `css` automatically adds styling when an element is added to the page, `stimulus` watches the `DOM` (Document Object Model) for new elements, and wires them up with behaviour defined in Stimulus controllers.
 
 [stimulus]: https://stimulusjs.org
 
@@ -151,7 +151,7 @@ That `updateQuantity` method handles receiving an event fired at the document. T
 This bit of html reads like this:
 
 * this div is controlled by the `cart-quantity` controller
-* when the `action` `cart-quantity-updated` is dispatched on the `document`, fire the `cart-quantity` method called `updatedQuantity` with that event data passed as a parameter.
+* when the `action` named `cart-quantity-updated` is dispatched on the `document`, fire the `cart-quantity` method called `updatedQuantity` with that event data passed as a parameter.
 * within the `cart-quantity` controller, the quantity element is accessible via the `quantity` target (via the `quantityTarget` shorthand)
 
 The `cart` can also be governed by its own controller. And inside the `cart`, there can be multiple elements governed by a `cart-item` controller.
@@ -161,24 +161,25 @@ The quantity field can then be defined to have two controllers handle its `chang
 ```html
 <div class="cart" data-controller="cart">
   <div class="cart-items">
-    <!-- ... -->
+    <!-- for each cart item ... -->
     <div data-controller="cart-item" class="cart-item">
       <!-- ... -->
       <input type="number" value="{{ item.quantity }}" 
        data-target="cart-item.quantity cart.quantity"
        data-action="change->cart#updateSubtotal change->cart-item#updateSubtotal change->cart#broadcastNewQuantity"
-       data-item-price="{{ item.unit_price }}"
+       data-item-price="13.99"
        />
       <!-- ... -->
       <span class="cart-item-price-subtotal"
-       data-target="cart-item.subtotal">{{ item.subtotal }}</span>
+       data-target="cart-item.subtotal">15.99</span>
     </div>
+    <!-- endfor -->
   </div>
   <!-- ... -->
   Subtotal
   <!-- ... -->
   <span class="cart-subtotal-price-subtotal"
-   data-target="cart.subtotal" >{{ site.data.cart.subtotal }}</span>
+   data-target="cart.subtotal" >139.99</span>
 </div>
 ```
 
@@ -206,11 +207,11 @@ export default class extends Controller {
 
 ```
 
-Stimulus makes the javascript behaviour layer more readable and pleasant.
+Stimulus makes the JavaScript behaviour layer more readable and pleasant.
 
-Both the Vanilla JS example and the Stimulus example rely on the server to generate the markup.
+Both the Vanilla JS example and the Stimulus example rely on the server to generate the markup. The state (the data) is stored in data attributes in the markup itself.
 
-The state (the data) is stored in data attributes in the markup itself. This last strategy explores what it's like to create the markup in the javascript, and have it react to changes in the values of the data.
+This last strategy explores what it's like to create the markup in the JavaScript, and have it react to changes in the values of the data.
 
 ## Strategy 3: Spot view-models
 
@@ -267,3 +268,44 @@ export default {
 }
 </script>
 ```
+
+When the Vue instance is `mounted`, the quantity is taken from a `data-quantity` attribute on the instance's `parentNode`. With Vue, that's an approach that saved a few kbs, because we don't need the html parser that's packaged with the whole Vue.js bundle.
+
+```html
+<div class="col text-right" 
+ data-behavior="cart-quantity"
+ data-quantity="2"></div>
+```
+
+And to mount the instance, we use this approach, again saving us from requiring the Vue.js html parser, saving us a few kbs.
+
+```js
+document.addEventListener('DOMContentLoaded', () => {
+  const el = document.querySelector('[data-behavior="cart-quantity"]')
+  if (!el) return
+  
+  new Vue({
+    // inject a new fake element that will be converted to the Vue instance on mount
+    el: el.appendChild(document.createElement('cart-quantity')),
+    render: h => h(CartQuantity),
+  })
+})
+
+```
+
+The `cart.vue` is more complex. It uses sub-components `cart-item.vue` and `currency.vue` to manage each cart-item and to print out a properly formatted currency. [Check out the repo][spot-vue-repo] for all the details.
+
+## Three ways to be modest
+
+In this example, we've seen how a UI like this can be
+
+* mostly driven by back-end markup, saving us from having to use a Single Page Application (SPA) approach;
+* split up in different components, even when using the vanilla js approach, since we're using a packager;
+* made to have the different components communicate their state to each other (the `cart-quantity` gets told to update on quantity changes);
+* made to use few dependencies, and be built to work for a long time.
+
+Next, let's look at what it means to deal with dependencies, or rather more broadly, what it means to be _dependent_.
+
+---
+
+Hi, I'm [Pascal Laliberté](https://pascallaliberte.me). This was a sample chapter from the [_Modest JS Works_](/) book I'm currently writing. It'll be a short book of higher-order principles, and like in this chapter, some practical examples, of how to be more modest when writing the behavioral language of the web, JavaScript. Sign-up below to be notified on the progress, and spread the word. Let's write modest JavaScript that's going to last a while.
