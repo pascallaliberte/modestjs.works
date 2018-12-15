@@ -20,6 +20,11 @@ Modern JS allows us to define the javascript code for each component separately,
 
 ## Strategy 1: Vanilla JS
 
+[See the demo][vanilla-demo] or [browse the source code][vanilla-repo]
+
+[vanilla-demo]: https://cart-vanilla.modestjs.works
+[vanilla-repo]: https://github.com/pascallaliberte/examples.modestjs.works/tree/master/cart/vanilla
+
 All of the interactivity is bound to the quantity field. Changing the quantity will trigger these updates:
 
 * the item's subtotal will be updated;
@@ -104,6 +109,11 @@ Notice too how we're using the `data-behavior` attribute instead of using an htm
 That trick comes from the folks at Basecamp. This next strategy comes from the folks at Basecamp too: Stimulus.
 
 ## Strategy 2: Stimulus
+
+[See the demo][stimulus-demo] or [browse the source code][stimulus-repo] for the Stimulus demo.
+
+[stimulus-demo]: https://cart-stimulus.modestjs.works
+[stimulus-repo]: https://github.com/pascallaliberte/examples.modestjs.works/tree/master/cart/stimulus
 
 [Stimulus][stimulus] is a small javascript framework allowing to automate adding behaviour to page elements as they're added to the page. Just like `css` automatically adds styling when an element is added to the page, `stimulus` watches the `DOM` (Document Object Model) for new elements, and wires them up with behaviour defined in Stimulus controllers.
 
@@ -203,6 +213,12 @@ Both the Vanilla JS example and the Stimulus example rely on the server to gener
 The state (the data) is stored in data attributes in the markup itself. This last strategy explores what it's like to create the markup in the javascript, and have it react to changes in the values of the data.
 
 ## Strategy 3: Spot view-models
+
+[See the demo][spot-vue-demo] or [browse the source code][spot-vue-repo] for the view-models demo.
+
+[spot-vue-demo]: https://cart-spot-vue.modestjs.works
+[spot-vue-repo]: https://github.com/pascallaliberte/examples.modestjs.works/tree/master/cart/spot-vue
+
 
 View-models (like Vue and React) are made to update the DOM when changes in the data occur. While Stimulus listens to changes in the DOM to fire methods in the controller, View-models listen to changes in the model (the data) to change the view (the markup).
 
