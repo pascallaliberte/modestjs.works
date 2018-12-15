@@ -10,6 +10,10 @@
     line-height: (33 / 32);
     
     margin-bottom: rem(44px);
+    
+    @media (min-width: $reference-width-md-until + 1px) {
+      margin-right: rem(80px);
+    }
   }
   
   h2 {
@@ -22,6 +26,17 @@
     color: $primary-dark-color;
     letter-spacing: 0.03em;
     font-weight: bold;
+    position: relative;
+    
+    &::before {
+      position: absolute;
+      content: '';
+      right: calc(100% + 1rem);
+      top: (20/18) + 0px;
+      height: 1em;
+      background-color: transparentize(lighten($primary-dark-color, 0.5), 0.8);
+      width: rem(26px);
+    }
   }
   
   img {

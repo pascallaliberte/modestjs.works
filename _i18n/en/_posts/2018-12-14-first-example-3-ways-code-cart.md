@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "First example: 3 ways to code a cart"
+title:  "First example: 3 modest ways to code a cart"
 categories: book sample
 author: Pascal Laliberté
 ---
