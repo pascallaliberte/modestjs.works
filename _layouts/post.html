@@ -3,9 +3,8 @@ layout: default
 ---
 
 <header class="heading">
-  <a class="return-link" href="/">Back to book page</a>
-  {% include modestjs-works-logo.svg %}
-  {% include sample-chapter-tab.svg %}
+  <a href="/">{% include modestjs-works-logo.svg %}</a>
+  {% include articles-tab.svg %}
 </header>
 
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -17,7 +16,8 @@ layout: default
     <div class="post__content" itemprop="articleBody">
       {{ content }}
     </div>
-
-    {% include email-sign-up-form.html %}
+    
+    <hr>
+    <p><em>Hey! Pascal here. I'm writing a short <a href="/">book on how writing Modest JS should be enough to build your app idea</a>. No need to be a star developer, no need to show off the Silicon Valley skills, just confidence is making a front-end that simply works. <a href="/">Check out the book and subscribe for a sample chapter.</a></em></p>
   </div>
 </article>

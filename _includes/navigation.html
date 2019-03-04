@@ -1,0 +1,6 @@
+<nav class="navigation">
+<a href="/" class="navigation-link navigation-link-ebook">Ebook</a>
+{% for post in site.posts limit:1 %}
+  <a class="navigation-link" href="{{ post.url }}">Latest Article</a>
+{% endfor %}
+</nav>

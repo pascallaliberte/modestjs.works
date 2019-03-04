@@ -1,0 +1,17 @@
+.navigation {
+  text-align: right;
+  display: block;
+  position: absolute;
+  right: 2em;
+  top: 2em;
+  font-family: $mono-font-family;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.navigation-link {
+  margin-left: 2em;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: rem(16px);
+}

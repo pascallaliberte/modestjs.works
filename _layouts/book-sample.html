@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<header class="heading">
+  <a class="return-link" href="/">Back to book page</a>
+  {% include modestjs-works-logo.svg %}
+  {% include sample-chapter-tab.svg %}
+</header>
+
+<article class="book-sample" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post__container">
+    <header class="post__header">
+      <h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>
+    </header>
+
+    <div class="post__content" itemprop="articleBody">
+      {{ content }}
+    </div>
+
+    {% include email-sign-up-form.html %}
+  </div>
+</article>

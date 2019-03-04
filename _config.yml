@@ -24,7 +24,7 @@ social:
 
 languages: ["en"]
 
-permalink: /:categories/:title/
+permalink: /articles/:categories/:title/
 
 ### Google webmaster tools, Google Analytics, Doorbell and Cookie consent uncomment and put the API key
 #webmaster_verifications:
