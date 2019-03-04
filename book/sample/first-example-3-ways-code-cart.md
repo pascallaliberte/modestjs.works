@@ -1,8 +1,6 @@
 ---
-layout: post
+layout: book-sample
 title:  "First Example: 3 Modest Ways to Code a Cart Page"
-categories: book sample
-author: Pascal Laliberté
 ---
 
 As a first example, let's take a shopping cart. Like this one:
