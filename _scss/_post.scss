@@ -39,6 +39,17 @@
     }
   }
   
+  h3 {
+    font-size: rem(18px);
+    line-height: (20/18);
+    margin-top: rem(53px);
+    margin-bottom: 1em;
+    color: $secondary-color;
+    letter-spacing: 0.03em;
+    font-weight: bold;
+    position: relative;
+  }
+  
   img {
     border: rem(36px) solid transparentize($secondary-color, .88);
     width: calc(100% + 7.2rem);
