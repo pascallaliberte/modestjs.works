@@ -171,56 +171,6 @@ li {
 
 // Components & pages
 
-.navigation {
-
-  @include container($container-padding);
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  margin-top: 10px;
-
-  padding-bottom: 10px;
-  border-bottom: 1px solid lighten($link-color, 40%);
-
-  &__branding {
-      display: flex;
-      align-items: center;
-  }
-
-  &__title {
-    color: $text-color !important;
-    font-size: $font-md;
-    font-weight: 500;
-  }
-
-  &__logo {
-    margin-right: 10px;
-  }
-
-  &__logo-img {
-    height: 40px;
-    width: 40px;
-  }
-
-  &__links {
-    display: flex;
-    flex-direction: row;
-  }
-
-  &__link {
-    margin-left: 30px;
-    font-size: $font-xs;
-
-    &--active {
-      color: $primary-color;
-    }
-  }
-
-}
-
 .home {
 
   @include container($container-padding);
