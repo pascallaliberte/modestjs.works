@@ -1,9 +1,9 @@
-.post {
+.book-sample {
   
   margin-top: 80px;
   
   h1 {
-    color: $secondary-color;
+    color: $primary-dark-color;
     font-weight: bold;
     font-family: $mono-font-family;
     font-size: rem(32px);
@@ -23,7 +23,7 @@
     margin-top: rem(53px);
     margin-bottom: 1em;
     font-family: $mono-font-family;
-    color: $secondary-color;
+    color: $primary-dark-color;
     letter-spacing: 0.03em;
     font-weight: bold;
     position: relative;
@@ -34,13 +34,13 @@
       right: calc(100% + 1rem);
       top: (20/18) + 0px;
       height: 1em;
-      background-color: transparentize(lighten($secondary-color, 0.5), 0.8);
+      background-color: transparentize(lighten($primary-dark-color, 0.5), 0.8);
       width: rem(26px);
     }
   }
   
   img {
-    border: rem(36px) solid transparentize($secondary-color, .88);
+    border: rem(36px) solid transparentize($primary-color, .88);
     width: calc(100% + 7.2rem);
     margin-left: rem(-36px);
     height: auto;
