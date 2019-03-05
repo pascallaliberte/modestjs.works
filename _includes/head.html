@@ -7,7 +7,12 @@
 <meta name="theme-color" content="{{ site.theme_color }}">
 <meta name="msapplication-navbutton-color" content="{{ site.theme_color }}">
 <meta name="apple-mobile-web-app-status-bar-style" content="{{ site.theme_color }}">
-<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/{{ site.og-image }}" />
+
+{% if page.layout == "post" -%}
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/modest-js-articles.jpg" />
+{% else -%}
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/{{ site.og-image }}" />
+{%- endif %}
 
 <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
 
