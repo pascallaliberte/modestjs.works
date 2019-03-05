@@ -34,10 +34,12 @@ module.exports = {
       {
         from: path.resolve('_images'),
         to: 'images/',
+        copyUnmodified: true,
       },
       { 
         from: path.resolve('_src/posts'),
-        to: 'scripts/'
+        to: 'scripts/',
+        copyUnmodified: true,
       },
     ]),
   ],
