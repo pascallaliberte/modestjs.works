@@ -175,7 +175,11 @@ Hope this helps!
   }
   
   function buttonHandler(e) {
-    if (!e.target.hasAttribute('data-behavior') || !e.target.getAttribute('data-behavior') == buttonIdentifier) {
+    if (!e.target.hasAttribute('data-behavior')) {
+      return
+    }
+    
+    if (e.target.getAttribute('data-behavior') != buttonIdentifier) {
       return
     }
     
