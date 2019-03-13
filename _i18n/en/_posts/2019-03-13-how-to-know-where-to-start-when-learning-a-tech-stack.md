@@ -27,7 +27,7 @@ The questions you ask yourself when learning something new are super important. 
 
 But to get over the sense of being overwhelmed by those questions, it pays to get out of the next steps, to zoom out, and to picture the future.
 
-## Picture the Future of Your Learning
+## Picture the Future of Your Learning To Get Some Distance From Your Questions
 
 Imagine some of the future milestones you'll achieve during your learning:
 
