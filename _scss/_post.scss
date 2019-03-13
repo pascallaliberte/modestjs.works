@@ -63,6 +63,23 @@
     }
   }
   
+  blockquote {
+    position: relative;
+    font-style: italic;
+    padding-left: 1em;
+    font-family: $mono-font-family;
+    
+    &::before {
+      position: absolute;
+      content: '';
+      right: calc(100% + 1rem);
+      top: (20/18) + 0px;
+      bottom: 0;
+      background-color: transparentize(lighten($primary-color, 0.5), 0.8);
+      width: rem(26px);
+    }
+  }
+  
   pre.highlight {
     padding: rem(18px);
     margin-left: rem(-18px);
