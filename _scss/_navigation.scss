@@ -14,4 +14,20 @@
   text-decoration: underline;
   font-weight: bold;
   font-size: rem(16px);
+  
+  &.active {
+    text-decoration: none;
+  }
+}
+
+.navigation-link-ebook {
+  &, &:hover, &:active {
+    color: $primary-color;
+  }
+}
+
+.navigation-link-articles {
+  &, &:hover, &:active {
+    color: $secondary-color;
+  }
 }

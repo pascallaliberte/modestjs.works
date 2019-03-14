@@ -1,6 +1,4 @@
 <nav class="navigation">
-<a href="/" class="navigation-link navigation-link-ebook">Ebook</a>
-{% for post in site.posts limit:1 %}
-  <a class="navigation-link" href="{{ post.url }}">Latest Article</a>
-{% endfor %}
+<a href="/" class="navigation-link navigation-link-ebook {% if page.layout == 'home' or page.layout == 'book-sample' -%} active {%- endif %}">Ebook</a>
+<a class="navigation-link navigation-link-articles {% if page.layout == 'blog' or page.layout == 'post' -%} active {%- endif %}" href="/articles/">Articles</a>
 </nav>
