@@ -1,20 +1,23 @@
 ---
 layout: default
 ---
+<header class="heading">
+  <a href="/">{% include modestjs-works-logo.svg %}</a>
+  {% include articles-tab.svg %}
+</header>
+
 <div class="blog">
+  <ol reversed>
   {% for post in site.posts %}
-    <article class="blog__post">
-      {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+    {% assign date_format = site.minima.date_format | default: "%B %-d" %}
+    <li>
       <div class="blog__date">
-        <p>{{ post.date | date: date_format }}</p>
-        <p>by {{ post.author }}</p>
+        {{- post.date | date: date_format -}}
       </div>
-      <div class="blog__content">
-        <a class="blog__link" href="{{ post.url | relative_url }}">
-          <h2 class="blog__title">{{ post.title | escape }}</h2>
-          <p class="blog__excerpt">{{ post.excerpt }}</p>
-        </a>
-      </div>
-    </article>
+      <a class="blog__link" href="{{ post.url | relative_url }}">
+        {{- post.title | escape -}}
+      </a>
+    </li>
   {% endfor %}
+  </ol>
 </div>
