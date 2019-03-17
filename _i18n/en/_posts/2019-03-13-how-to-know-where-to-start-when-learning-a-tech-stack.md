@@ -72,11 +72,3 @@ And then make the list of statements. Make sure to start each statement with a p
 Picturing the future gets you out of those tough overwhelming moments when you have tons of questions.
 
 Hope this helps!
-
----
-
-_By the way, I'm a fan of Vue.js, mostly because it seems built by people who share my values and my tastes, and I find that that's a good way to determine if a tech approach is worth the effort._
-
-_But I do think today's JavaScript approaches are part of a bigger industry problem. The JS industry lacks modesty. And so I'm writing a book about that called [Modest JS Works][book]. Hope you can check it out._
-
-[book]: /

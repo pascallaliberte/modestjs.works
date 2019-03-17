@@ -122,12 +122,6 @@ For transpiling, concatenation and minification.
 
 Hope this helps!
 
----
-
-_Hey! Pascal here. I'm writing a short [book on how writing Modest JS should be enough to build your app idea][book]. No need to be a star developer, no need to show off the Silicon Valley skills, just confidence is making a front-end that simply works. [Check out the book and subscribe for a sample chapter.][book]
-
-[book]: /
-
 <script>
 (function() {
   var randomPickerSelector = '[data-behavior="random-pick"]'
