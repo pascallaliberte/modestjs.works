@@ -21,3 +21,7 @@ In order to keep your JS modest:
 My name's [Pascal Laliberté](https://pascallaliberte.me/), and I'm writing this because I think JavaScript is a really good tool for making today's new businesses, and for making your point in today's world. I'm writing this for those who want to learn it, and who then want do something with it that matters more.
 
 No need to ruin JavaScript with immodesty. It was always supposed to be modest.
+
+---
+
+_I'll go in more depth with these ideas in articles and in the book, so sign up if you'd like to be the first to know when I've got something new to share._
