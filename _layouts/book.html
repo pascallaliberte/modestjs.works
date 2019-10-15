@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+{% include book-nav.html %}
+
+<header class="heading">
+  {% include modestjs-works-logo.svg %}
+  {% include ebook-tab.svg %}
+</header>
+
+<article class="book" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post__container">
+    <header class="post__header">
+      <h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>
+    </header>
+
+    <div class="post__content" itemprop="articleBody">
+      {{ content }}
+    </div>
+  </div>
+</article>

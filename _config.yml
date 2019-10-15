@@ -26,6 +26,12 @@ languages: ["en"]
 
 permalink: /articles/:categories/:title/
 
+collections:
+  book:
+    sort_by: index
+    output: true
+    permalink: /:collection/:path/
+
 ### Google webmaster tools, Google Analytics, Doorbell and Cookie consent uncomment and put the API key
 #webmaster_verifications:
 #  google: verification_code
