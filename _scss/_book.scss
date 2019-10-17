@@ -1,0 +1,30 @@
+.book {
+  font-family: $secondary-font-family;
+  font-size: rem(15px);
+  line-height: 1.5;
+  
+  h1 {
+    font-family: $mono-font-family;
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+    color: black;
+  }
+  
+  h2 {
+    font-family: $primary-font-family;
+    // text-transform: uppercase;
+    font-size: rem(15px);
+    margin-top: 4em;
+    margin-bottom: 2em;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+  }
+  
+  h3 {
+    font-family: $secondary-font-family;
+    font-weight: bold;
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+  }
+}

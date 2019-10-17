@@ -19,6 +19,7 @@ $font-xs: 16px;
 
 $system-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 $primary-font-family: 'Lato', $system-font-family;
+$secondary-font-family: 'Noto Serif', serif;
 $mono-font-family: 'Inconsolata', monospace, $system-font-family;
 
 $reference-width-xs:    375px;
@@ -90,7 +91,7 @@ $reference-width-xl: 1024px;
   main {
     flex: 1;
     padding: rem(18px);
-    width: rem(496px);
+    width: rem(640px);
     margin-left: rem(257px);
     
     font-size: rem(18px);
