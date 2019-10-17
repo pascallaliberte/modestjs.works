@@ -1,7 +1,7 @@
-<nav>
+<nav class="book-nav">
 <ul>
 {% for chapter in site.book %}
-  <li><a href="{{ chapter.url }}">{{ chapter.title }}</a></li>
+  <li><a href="{{ chapter.url }}" {% if chapter.url == page.url %}class="active"{% endif %}>{{ chapter.title }}</a></li>
 {% endfor %}
 </ul>
 </nav>

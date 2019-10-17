@@ -1,6 +1,6 @@
 .book {
   font-family: $secondary-font-family;
-  font-size: rem(15px);
+  font-size: rem(16px);
   line-height: 1.5;
   
   h1 {
@@ -26,5 +26,33 @@
     font-weight: bold;
     margin-top: 2em;
     margin-bottom: 1.5em;
+  }
+}
+
+.book-nav {
+  margin-left: rem(-257px);
+  width: rem(200px);
+  margin-top: rem(300px);
+  float: left;
+  ul {
+    list-style: none;
+    font-size: rem(14px);
+  }
+  
+  li {
+    margin-bottom: 0.8em;
+  }
+  
+  a {
+    color: $text-color;
+    
+    &.active {
+      
+      &, &:hover, &:active {
+        color: $primary-color;
+        text-decoration: none;
+        cursor: text;
+      }
+    }
   }
 }
