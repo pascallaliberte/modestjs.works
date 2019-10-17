@@ -2,6 +2,7 @@
 layout: book
 title: Selling Your Modest Idea
 index: 32
+part: 1
 ---
 
 If you have a business idea, you'll need to learn to sell. And if you're working for someone else, you'll need to learn to sell ideas.

@@ -2,6 +2,7 @@
 layout: book
 title: What Leadership Does
 index: 34
+part: 1
 ---
 
 They say that in life, there are no leaders, just people who take a lead.

@@ -2,6 +2,7 @@
 layout: book
 title: What Are We Choosing React For?
 index: 12
+part: 1
 ---
 
 There's nothing modest about [React][react]. It's convoluted, it favours taking over the whole page, it rewrites the browser's strengths, it requires babysitting the data model state to never fail, its community is largely filled with me-too wannabes, and it evolves at break-code speed.

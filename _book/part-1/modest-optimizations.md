@@ -2,6 +2,7 @@
 layout: book
 title: Keeping Optimizations Modest
 index: 36
+part: 1
 ---
 
 Let's define two terms:

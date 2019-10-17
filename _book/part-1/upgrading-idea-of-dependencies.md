@@ -2,6 +2,7 @@
 layout: book
 title: Upgrading (the idea of) dependencies
 index: 5
+part: 1
 ---
 
 Add a dependency to your project. How does it feel? 

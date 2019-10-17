@@ -39,10 +39,15 @@
     list-style: none;
     font-size: rem(14px);
     line-height: 1.2;
+    padding: 0;
   }
   
   li {
     margin-bottom: 0.8em;
+  }
+  
+  li li {
+    margin-left: rem(20px);
   }
   
   a {
@@ -56,5 +61,14 @@
         cursor: text;
       }
     }
+  }
+  
+  .book-nav-part-num {
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1em;
+    margin-top: 2em;
+    font-size: 0.8em;
+    font-weight: bold;
   }
 }

@@ -2,6 +2,7 @@
 layout: book
 title: Avoiding the Ratchet
 index: 6
+part: 1
 ---
 
 The engine at the heart of the modern JavaScript world is fast. Everything about it is fast. JavaScript's engines are faster than ever. Download speeds are faster than ever too. We're asked to make our development faster, our tests run faster, our deployments continuously fast and the first page render be fast. Expedite, automate, eliminate.

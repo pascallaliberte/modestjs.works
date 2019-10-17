@@ -2,6 +2,7 @@
 layout: book
 title: Modest Business, Modest JS
 index: 30
+part: 1
 ---
 
 Do you have to build the next Facebook? Are you shooting to be an AirBnB or a Netflix or an Ebay?

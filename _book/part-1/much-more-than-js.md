@@ -2,6 +2,7 @@
 layout: book
 title: It's About Much More than Writing JavaScript
 index: 25
+part: 1
 ---
 
 I don't want to be a star developer. If you're like me, you want to get good at something (develop a craft), you want to work with interesting people, you want to make sure you make a living for your family, and you want to make a difference for people.
