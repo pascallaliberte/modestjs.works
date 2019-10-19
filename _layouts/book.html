@@ -1,5 +1,6 @@
 ---
 layout: default
+class: book
 ---
 
 {% include book-nav.html %}
@@ -9,7 +10,7 @@ layout: default
   {% include ebook-tab.svg %}
 </header>
 
-<article class="book" itemscope itemtype="http://schema.org/BlogPosting">
+<article itemscope itemtype="http://schema.org/BlogPosting">
   <div class="post__container">
     <header class="post__header">
       <h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>

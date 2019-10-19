@@ -1,9 +1,14 @@
 .book {
-  font-family: $secondary-font-family;
-  font-size: rem(16px);
-  line-height: 1.5;
+  .navigation {
+    display: none;
+  }
   
-  margin-top: 80px;
+  article {
+    font-family: $secondary-font-family;
+    font-size: rem(16px);
+    line-height: 1.5;
+    margin-top: 80px;  
+  }
   
   h1 {
     color: $secondary-color;

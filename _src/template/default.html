@@ -5,7 +5,7 @@
     {% include head.html %}
   </head>
 
-  <body>
+  <body class="{{ page.class | default: layout.class | default: '' }}">
     {% include navigation.html %}
 
     <main>
