@@ -18,5 +18,16 @@ layout: default
     <div class="post__content" itemprop="articleBody">
       {{ content }}
     </div>
+    
+    {% if page.next.url %} 
+    <div class="book-next-link-wrapper">
+      <strong>Next</strong><br>
+      <a class="book-next-link text-link"
+         href="{{ page.next.url }}">
+        <span class="book-next-link-title">{{ page.next.title }} →</span>
+      </a>
+    </div>
+    {% endif %}
+    
   </div>
 </article>
