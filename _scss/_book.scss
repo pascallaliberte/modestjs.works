@@ -116,7 +116,6 @@
     display: flex;
     flex-direction: row;
     width: 200vw;
-    max-height: 100vh;
     
     position: relative;
     left: 0;
@@ -145,13 +144,10 @@
   }
   
   .book-content {
-    padding-top: rem(80px);
+    padding-top: rem(20px);
     padding-left: $container-padding * 2;
     padding-right: $container-padding;
     padding-bottom: rem(100px);
-    max-height: 100vh;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -172,18 +168,80 @@
   .book-nav-list {
     max-height: 100vh;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     padding-left: 10vw;
     padding-right: 10vw;
     padding-top: rem(30px);
+    padding-bottom: rem(80px);
   }
   
   .book-nav-toggle {
     display: block;
     position: absolute;
     right: 0;
+    top: rem(10px);
     z-index: 10;
-    transform: translateX(50%);
+    transform: translateX(rem(140px));
     text-align: center;
+    font-size: rem(14px);
+    font-weight: bold;
+    line-height: 1;
+    text-transform: uppercase;
+    width: rem(260px);
+    height: rem(45px);
+    
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: rem(4px);
+      right: rem(4px);
+      left: rem(4px);
+      bottom: rem(4px);
+      background-color: $secondary-color;
+      transform: skew(-13deg, 0deg);
+    }
+    
+    &::before {
+      background-color: $shadow-color;
+      transform: skew(-13deg, 0deg) translateX(rem(2px)) translateY(rem(2px));
+    }
+    
+    a {
+      &, &:visited, &:active, &:focus {
+        color: white !important;
+        text-decoration: none;
+      }
+      
+      padding: rem(10px 15px);
+      z-index: 10;
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap;
+      
+      svg {
+        margin-bottom: 0.2em;
+      }
+    }
+    
+    a[href="#contents"] {
+      width: rem(140px);
+      text-align: left;
+      right: 0;
+      svg {
+        margin-left: rem(3px);
+        margin-right: rem(10px);
+      }
+    }
+    a[href="#"] {
+      width: rem(120px);
+      left: 0;
+      text-align: right;
+      svg {
+        margin-left: rem(10px);
+      }
+    }
   }
   
 }
