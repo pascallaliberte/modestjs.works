@@ -283,7 +283,7 @@ You could use Stimulus to coordinate loading or destroying the component. The St
 * I'm ending up create mostly empty pages that just contain the root HTML to mount my view-models on. I'm practically just using view-models for all of my page's elements. See _SPAs_ below.
 * I just have a JSON API endpoint for that section of my app and it would be easiest if I didn't have to generate server-generated views. See _SPAs_ below.
 
-## SPAs - Single-Page Applications
+## <acronym>SPAs</acronym> - Single-Page Applications
 
 A single-page application is typically* an all-JavaScript affair. Reactive view-models like Vue or React are the baseline. Whole pages are handled by view-models, and the browser's handling of clicks and the back button are overriden to serve different JavaScript-generated views to the user.
 

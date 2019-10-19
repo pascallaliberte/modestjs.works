@@ -40,6 +40,16 @@
       background-color: transparentize(lighten($primary-dark-color, 0.5), 0.8);
       width: rem(26px);
     }
+    
+    acronym {
+      text-transform: none;
+    }
+  }
+  
+  h2.question {
+    text-transform: none;
+    font-weight: normal;
+    line-height: (24/18);
   }
   
   img {

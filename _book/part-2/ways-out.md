@@ -8,6 +8,7 @@ part: 2
 Here are a few starting points and some ways out from each:
 
 ## We've got a web-based React SPA in production using GraphQL, and we're on our third episode where we were caught with some surprises maintaining it.
+{: .question }
 
 Maybe it's that you did one too-many upgrade that ended up being a painful dependency-hell.
 
@@ -24,6 +25,7 @@ A few ways out:
 [shapeup]: https://basecamp.com/shapeup/
 
 ## We're just about to start a project, and our team is a little too excited about using an SPA.
+{: .question }
 
 * Before you settle on your stack, consider challenging the rest of the team to build a small prototype using both approaches: an Single-Page Application and a Multi-Page Application using sprinkles, [Turbolinks][turbolinks] and [Stimulus][stimulus] (or [Trimmings][trimmings]).
 * When you but up against hypothetical "what if's" that nudge you to play safe and use the popular frameworks "just in case we get asked to do _this_", show your case that you can always add a page component that's more reactive if ever you need to, and how to wrap it properly to survive removal from/re-addition to the DOM.
@@ -33,6 +35,7 @@ A few ways out:
 [trimmings]: https://postlight.com/trackchanges/back-to-html-introducing-trimmings
 
 ## Our team is intent on joining the trends so that they can build some open-source package for visibility.
+{: .question }
 
 * Consider persuading them to build something counter-cultural instead, and make a bigger splash with less effort.
 * Consider modelling a more modest approach by encouraging to have the debate out in the open on your blog or on dev.to. Have different members of your team publically voice their opinion, in reply to the main post, where you're announcing the discernment of tech stack that you're going through. It'll create some vulnerability, and surely attract like-minded people that also want to avoid playing the game everyone else is playing.
