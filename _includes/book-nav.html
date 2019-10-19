@@ -3,6 +3,13 @@
 {% assign part1chapters = site.book | where_exp:"item", "item.part == 1" %}
 {% assign part2chapters = site.book | where_exp:"item", "item.part == 2" %}
 
+<div class="book-nav-toggle">
+  <a href="#">Return</a>
+  <a href="#contents">Contents</a>
+</div>
+
+<div class="book-nav-list">
+
 <ul>
   <li><span class="book-nav-part-num">Part 1</span>
     <ul>
@@ -19,4 +26,6 @@
     </ul>
   </li>
 </ul>
+
+</div>
 </nav>
