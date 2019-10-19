@@ -1,0 +1,4 @@
+# Redirect with a 301
+/book/part-1/         /book/part-1/intro              301
+/book/part-2/         /book/part-2/intro              301
+/book/         /              301

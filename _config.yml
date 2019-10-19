@@ -52,6 +52,9 @@ plugins:
   # - jekyll-multiple-languages-plugin
   # - amp-jekyll
 
+include:
+  - _redirects
+
 ### Exclude from processing.
 exclude:
   - Gemfile
