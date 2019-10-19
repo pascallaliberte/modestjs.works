@@ -20,7 +20,7 @@ $font-xs: 16px;
 $system-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 $primary-font-family: 'Lato', $system-font-family;
 $secondary-font-family: 'Noto Serif', serif;
-$mono-font-family: 'Inconsolata', monospace, $system-font-family;
+$mono-font-family: 'Source Code Pro', monospace, $system-font-family;
 
 $reference-width-xs:    375px;
 $reference-width-xs-until: 525px;
@@ -70,7 +70,7 @@ $reference-width-xl: 1024px;
   main {
     padding: rem(18px);
     width: rem(496px);
-    margin-left: rem(100px);
+    margin-left: rem(200px);
     
     font-size: rem(18px);
     line-height: (25 / 18);
@@ -79,7 +79,7 @@ $reference-width-xl: 1024px;
   }
   
   body::before {
-    width: calc(100vw - 10rem);
+    width: calc(100vw - 20rem);
   }
 }
 
@@ -149,7 +149,9 @@ li {
   margin-bottom: 1em;
 }
 
-
+pre, code, kbd, samp {
+  font-family: $mono-font-family;
+}
 
 // Shared
 
