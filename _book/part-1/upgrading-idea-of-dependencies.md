@@ -19,7 +19,7 @@ In his book _[Principle-Centered Leadership][covey]_, Stephen Covey (of the book
 
 [covey]: https://www.goodreads.com/book/show/44644.Principle_Centered_Leadership
 
-(dependence ----------->)
+(dependence →)
 
 Being dependent is the most immature part of the maturity continuum, according to Covey. It's an immature stage because it's characterized by a dynamic of _blame_.
 
@@ -29,7 +29,7 @@ But for those who catch themselves in a blame mindset and know that a change is 
 
 ## Second Stage of Maturity: Independence
 
-(dependence ------  independence ----->)
+(dependence →  independence →)
 
 Independence is an upgrade on dependence. I take up responsibility, I make choices that are separate from those of others. I'm not mingled with the problem, I'm distinct from it.
 
@@ -45,7 +45,7 @@ As much work as it requires, and beyond its benefits compared to the dependence 
 
 "Us". In the most mature relationships, not only did the person conquer the temporary _independence_ stage, but that person has moved on to making other people's _environment_ more mature as a whole (for "us"), so people can navigate their way up from "them" to "me", and from "me" to "us" too.
 
-(dependence ------  independence -----  interdependence)
+(dependence → independence → interdependence)
 
 If the interdependence mindset is about "us", how does that relate to today's software industry? In particular, how does it relate to JavaScript "dependencies"?
 
