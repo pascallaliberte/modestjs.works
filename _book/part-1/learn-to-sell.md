@@ -18,7 +18,7 @@ But those are actually just two "forces" in the decision-making process.
 
 A popular product-framing idea has been going around. It's called the Jobs-To-Be-Done theory of buyer behaviour. In short, people don't buy products or ideas, they _hire_ the product or idea for a _job_. And that job can take surprising forms. A person hired those two ebooks for accountability, not for the knowledge. Another person hired expensive winter boots from a company that thought more about winter than they would have to, so he could focus on thinking about work rather than winter. At the core, the Jobs-To-Be-Done idea stresses that purchasers just want to make progress.
 
-[forces of progress image]
+![Diagram of the Four Forces of Progress](/assets/images/forces-of-progress-diagram.svg)
 
 One of the ideas behind Jobs-To-Be-Done is the idea of The Forces of Progress. In their pursuit of progress, there are four forces at play in the mind of the purchaser, when presented with solutions to consider hiring. Let's start with the two forces which resemble benefits and costs. Force #2 is _The attraction to the solution_ (the benefits are in here, but so are the person's aspirations). #3 is the _Anxieties about the solution_ (which includes the costs, but also includes other mental pushbacks about your idea).
 
