@@ -313,5 +313,3 @@ Another approach, which is modest and interesting, is called [Trimmings][trimmin
 
 [trimmings]: https://postlight.com/trackchanges/back-to-html-introducing-trimmings
 [stimulus_reflex]: https://github.com/hopsoft/stimulus_reflex
-
-## Questions and Answers
