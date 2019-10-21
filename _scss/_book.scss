@@ -306,3 +306,11 @@
     font-weight: bold;
   }
 }
+
+.book-next-link-wrapper {
+  font-family: $mono-font-family;
+  a {
+    color: $secondary-color;
+    text-decoration: underline;
+  }
+}
