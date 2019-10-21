@@ -5,21 +5,49 @@ layout: home
 **A short ebook** for those who want to write modest JavaScript, and then focus on the other stuff that matters more.
 {: .intro }
 
-At the time of writing, Edge is going to switch to Chromium, JavaScript is getting run on the server, is touted as the future of everything, is replacing native UIs and **eating up batteries in exchange for developer productivity**. The leading JavaScript framework, React, is sponsored by a company whose morality is on trial. Such is the state of modern js.
+You've always been inclined to stay away from the big JavaScript frameworks. **But now you're within a bigger team**, and it's a little confounding to you how they just jump on writing some heavy-handed JS right away. **What is this madness?**
 
-JavaScript developers have never had such a time in the spotlight. They've never had such an opportunity to build something new and be known. But given the size of the JavaScript universe, you'd think there would be more developers who are going against the grain, going for modesty. It seems the whole developer group is polarized too: **you're either transpiling some server-side-hydrated lazy-loaded components, or you're still doing jQuery**.
+You've made your case to stay small, stay bounded, stay modest, but the whole web seems to be rushing in the same JS-for-everything direction. So what to do?
 
-This book is for all that, by choice, are hanging out someplace else, where it's a little less of a muscle-car race. It's for companies choosing the customer over the tech stack, who choose business models that will outlast the next framework minor revision, and **who write code that's going to hold up well in 10 years**.
+---
 
-## Less about code, more about perspective
+**You've looked for another technical solution to propose.**
 
-While this book will show examples of modest JavaScript, it'll look at the bigger picture too:
+Right now, if you're looking for a technical solution that is a little more modest, it'll be something like server-side generated HTML, [Stimulus][stimulus] which is really nice, and view-models in a few spots. I go over these in Part 2 of the book.
 
-* While the whole JavaScript industry is built on dependencies, we'll look at **what it means to be dependent** (and what the opposite of that is).
-* There's a reason the pace of modern JavaScript is accelerating, it's because it has a built-in ratchet. We'll look at **the dynamics of the modern js racket**.
-* People choose to follow the modern JavaScript trends for some good reasons, but they don't have to be your reasons, and you don't have to follow. **We'll learn to speak business, how to sell (ideas), and how to lead**.
+[stimulus]: https://stimulusjs.org
 
-I'm [Pascal Laliberté][me], and I've been working on the web my whole career. **If you're like me, you have no desire to be a star developer**. You just want to create a nicely-built product for people who will be happy to pay for it. You want to make stuff like a small shop owner would, or a craftsman would. Something to be proud of, that's going to have some quirks that are unique, that are yours, and that will make you smile.
+And there are other approaches emerging. [Svelte][svelte] and [Reef][reef] are modest alternatives to the big view-models. [Trimmings][] is Stimulus-inspired and gives a reactive feel to server-side generated pages. Also, [Chris Ferdinandi][cferdinandi]'s been doing a lot of good teaching the basics of Vanilla JS.
+
+[reef]: https://github.com/cferdinandi/reef
+[cferdinandi]: https://gomakethings.com
+[svelte]: https://svelte.dev
+[trimmings]: https://postlight.com/trackchanges/back-to-html-introducing-trimmings
+
+**With time, these will change, new approaches will come up**, and you might be inventing one. But you're not here for the JS-framework-du-jour.
+
+---
+
+"Will this thing be around in 5-10 years?"
+
+**"What's special about the companies that keep away from the heavy-JS nonsense?"**
+
+I don't have answers to those questions, but my book's `Part 1` is about some principles that hope to give decision-making guardrails to try to work within.
+
+Those principles, they're about **how to inject modesty in the JavaScript fast-paced, break-code dev culture**.
+
+For example, in the chapter `Upgrading (the idea of) dependencies`, we look at what it means to be dependent, and that the opposite of being dependent is not merely being _independent_.
+
+I also go over the role of [React][react] in today's ecosystem. It's a popular default starting point, but like other such default starting points that history brought us, it will be replaced too.
+
+[react]: https://reactjs.org
+
+And there's a bit about your role in the broader organization you're working for. How **you're not just a developer**, how building an app is a lot more than building the software, and how the business that you're in might be immodest in the first place. And if you are to sell your ideas, you need to learn to speak the "buyer's" language and **keep your ego out of the way**.
+
+In `Part 2`, I make the case for `The JS Gradient`, a principle whereby your app can have multiple coexisting modern JS approaches, starting from the global sprinkles to spot view-models to, yes, an SPA if that's really necessary. At each point in the Gradient, you'll see when it's a good idea to go a step further toward heavier JavaScript, or otherwise don't.
+
+Hope this Helps.  
+[Pascal Laliberté][me]
 
 ---
 

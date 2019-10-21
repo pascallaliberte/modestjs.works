@@ -223,3 +223,9 @@ pre, code, kbd, samp {
   }
 
 }
+
+hr {
+  border-top: rem(5px) solid lighten($link-color, 40%);
+  max-width: rem(150px);
+  margin: 2em auto 2em 0;
+}
