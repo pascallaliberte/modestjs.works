@@ -2,7 +2,7 @@
 layout: home
 ---
 
-**A short ebook** for those who want to write modest JavaScript, and then focus on the other stuff that matters more.
+**A short ebook** for those who want to write modest JavaScript, and then focus on all the other stuff that matters in building an app.
 {: .intro }
 
 You've always been inclined to stay away from the big JavaScript frameworks. **But now you're within a bigger team**, and it's a little confounding to you how they just jump on writing some heavy-handed JS right away. **What is this madness?**
@@ -13,7 +13,7 @@ You've made your case to stay small, stay bounded, stay modest, but the whole we
 
 **You've looked for another technical solution to propose.**
 
-Right now, if you're looking for a technical solution that is a little more modest, it'll be something like server-side generated HTML, [Stimulus][stimulus] which is really nice, and view-models in a few spots. I go over these in Part 2 of the book.
+Right now, if you're looking for a technical solution that is a little more modest, it'll be something like server-side generated HTML, [Stimulus][stimulus] which is really nice, and view-models in a few spots. I go over these in `Part 2` of the book.
 
 [stimulus]: https://stimulusjs.org
 
@@ -44,9 +44,9 @@ I also go over the role of [React][react] in today's ecosystem. It's a popular d
 
 And there's a bit about your role in the broader organization you're working for. How **you're not just a developer**, how building an app is a lot more than building the software, and how the business that you're in might be immodest in the first place. And if you are to sell your ideas, you need to learn to speak the "buyer's" language and **keep your ego out of the way**.
 
-In `Part 2`, I make the case for `The JS Gradient`, a principle whereby your app can have multiple coexisting modern JS approaches, starting from the global sprinkles to spot view-models to, yes, an SPA if that's really necessary. At each point in the Gradient, you'll see when it's a good idea to go a step further toward heavier JavaScript, or otherwise don't.
+In `Part 2`, I make the case for `The JS Gradient`, a principle whereby your app can have multiple coexisting modern JS approaches, starting from the global sprinkles to spot view-models to, yes, an SPA if that's really necessary. At each point in the gradient, you'll see when it's a good idea to go a step further toward heavier JavaScript, or otherwise don't.
 
-Hope this Helps.  
+Hope this helps.  
 [Pascal Laliberté][me]
 
 ---
