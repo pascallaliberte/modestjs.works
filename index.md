@@ -17,14 +17,15 @@ Right now, if you're looking for a technical solution that is a little more mode
 
 [stimulus]: https://stimulusjs.org
 
-And there are other approaches emerging. [Svelte][svelte] and [Reef][reef] are modest alternatives to the big view-models. [Trimmings][] is Stimulus-inspired and gives a reactive feel to server-side generated pages. Also, [Chris Ferdinandi][cferdinandi]'s been doing a lot of good teaching the basics of Vanilla JS.
+And there are other approaches emerging. [Svelte][svelte] and [Reef][reef] are modest alternatives to the big view-models. [Trimmings][] is Stimulus-inspired and gives a reactive feel to server-side generated pages. Also, [Chris Ferdinandi][cferdinandi]'s been doing a lot of good teaching the basics of Vanilla JS, and selling the idea of the [Lean Web][leanweb].
 
 [reef]: https://github.com/cferdinandi/reef
 [cferdinandi]: https://gomakethings.com
+[leanweb]: https://leanweb.dev
 [svelte]: https://svelte.dev
 [trimmings]: https://postlight.com/trackchanges/back-to-html-introducing-trimmings
 
-**With time, these will change, new approaches will come up**, and you might be inventing one. But you're not here for the JS-framework-du-jour.
+**With time, these will change, and new approaches will come up**, and you might be inventing one. But you're not here for the JS-framework-du-jour.
 
 ---
 
