@@ -7,13 +7,13 @@ part: 1
 
 Let's define two terms:
 
-1. _Technical debt_: what you accrue when you make concessions and shortcuts, when you leave defects or imperfections in your code.
-2. _Runway_: A fixed amount of time after which your organization runs out of money.
+1. **Technical debt**: what you accrue when you make concessions and shortcuts, when you leave defects or imperfections in your code.
+2. **Runway**: A fixed amount of time after which your organization runs out of money.
 
 And here are two axioms:
 
-1. The only way to get rid of technical debt, is to get rid of runways.
-2. The only way to get rid of runways is to keep your ambitions modest.
+1. **The only way to get rid of technical debt, is to get rid of runways.**
+2. **The only way to get rid of runways is to keep your ambitions modest.**
 
 There's no technical debt if your code mostly works and your ambitions are low.
 
