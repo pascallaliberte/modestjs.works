@@ -122,6 +122,21 @@
       margin-right: rem(-145px);
     }
   }
+  
+  aside {
+    position: relative;
+    padding-left: rem(18px);
+    
+    &::before {
+      position: absolute;
+      content: '';
+      right: calc(100% + #{rem(9px)});
+      top: (20/18) + 0px;
+      bottom: 0;
+      background-color: transparentize(lighten($primary-color, 0.5), 0.8);
+      width: rem(18px);
+    }
+  }
 }
 
 @media (max-width: $reference-width-xs-until) {
