@@ -71,6 +71,14 @@
     line-height: (24/18);
   }
   
+  h3 {
+    margin: rem(48px) 0 rem(20px);
+    font-weight: bold;
+    font-size: rem(18px);
+    color: $primary-dark-color;
+    font-family: $primary-font-family;
+  }
+  
   img {
     border: rem(36px) solid transparentize($primary-color, .88);
     width: calc(100% + 7.2rem);
