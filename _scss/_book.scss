@@ -83,6 +83,14 @@
     }
   }
   
+  ul, ol {
+    padding-left: rem(20px);
+  }
+  
+  blockquote {
+    font-family: $mono-font-family;
+  }
+  
   pre.highlight {
     padding: rem(18px);
     margin-left: rem(-18px);

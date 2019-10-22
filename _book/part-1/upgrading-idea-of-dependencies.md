@@ -7,7 +7,7 @@ part: 1
 
 Add a dependency to your project. How does it feel? 
 
-"This is awesome, I've spared myself from writing all this functionality. I'm benefitting from all the work someone else put into it. This does the job well, let's roll with it."
+> "This is awesome, I've spared myself from writing all this functionality. I'm benefitting from all the work someone else put into it. This does the job well, let's roll with it."
 
 The _idea_ of dependencies in software writing goes back a while. In JavaScript, packages are published on [npm][npm], the node package manager registry. Packages listed in the npm register can be quite small in size. That's because browsers had been slow updating their standard libraries, and so if you wanted some nice shortcuts for the language, you had to upgrade your stack with polyfills and libraries.
 
