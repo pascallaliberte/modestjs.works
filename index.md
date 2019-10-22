@@ -29,9 +29,9 @@ And there are other approaches emerging. [Svelte][svelte] and [Reef][reef] are m
 
 ---
 
-"Will this thing be around in 5-10 years?"
+> "Will this thing be around in 5-10 years?"
 
-**"What's special about the companies that keep away from the heavy-JS nonsense?"**
+> **"What's special about the companies that keep away from the heavy-JS nonsense?"**
 
 My answer to those questions: bet on modesty.
 
