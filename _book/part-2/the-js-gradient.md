@@ -5,11 +5,15 @@ index: 54
 part: 2
 ---
 
-If today, you were to start a new project _from scratch_, would you choose a front-end framework and build a single-page application? In some circles, that certainly feels like the default option. You get everything you need, you can build on what others have built, and it's trendy. As we've seen from the rest of the book, the default option isn't the _modest_ option. You're conjoined to a community that's ambitious, in a hurry and competitive. Your dependency stack is tall and brittle, and the toolkit's size is disproportionate to your needs.
+If today, you were to start a new project _from scratch_, would you choose a front-end framework and build a single-page application? In some circles, that certainly feels like the default option. You get everything you need, you can build on what others have built, and it's trendy. As we've seen from the rest of the book, the default option isn't the _modest_ option. You're conjoined to a community that's ambitious, in a hurry and competitive. Your dependency stack is tall and brittle, and the toolkit's size is **disproportionate to your needs and the needs of your users**.
 
 There is, however, a way to build apps, today, using _modern_ JavaScript, but that uses more modest practices.
 
-In the last chapter, we've covered three ways to build modest JavaScript: Sprinkles, [Stimulus][stimulus] and Spot view-models. Can we use all three in the same project? You bet. Know the basics of how the browser works, and the three build up on each other. It won't feel like you're learning three distinct approaches, it'll feel like a gradient of options.
+In the last chapter, we've covered three ways to build modest JavaScript: Sprinkles, [Stimulus][stimulus] and Spot view-models.
+
+Can we use all three in the same project? **You bet.** Know the basics of how the browser works, and the three build up on each other.
+
+**It won't feel like you're learning three distinct approaches, it'll feel like a gradient of options.**
 
 [stimulus]: https://stimulusjs.org
 
@@ -32,15 +36,16 @@ I call this approach **the JS Gradient**.
 
 At the outset, let's highlight some of the ideals we're shooting for:
 
-1. **We will prefer server-generated HTML**. Whether from a full page render, or if fetching just a fragment of the page, our approach will prefer server-generated HTML over JavaScript-generated HTML. As each additional level of JavaScript in the JS Gradient gets more involved, we'll move away from that ideal, but we'll start from that goal post.
-2. **The HTML on a page can be swapped out and replaced on a whim**. This will allow us to use techniques like `pjax` (replacing the whole body of a page with new HTML, which includes the [Turbolinks][turbolinks] library popular in Rails and Laravel apps) and `ahah` (asynchronous HTML over HTTP, to replace parts of a page with new HTML). This gives us the ability to make the app feel really fast, while keeping the HTML generated server-side. To do this, we'll need to make sure that when custom event handlers are added on specific elements, they should be removed when the element is removed from the page. The best way to do this is by specifying event handlers on the whole document and watching to see if they were fired by a certain element. The next best way is to use Stimulus, as it coordinates the addition and removal of event handlers as elements are detected as being added or removed from the page. This ideal disqualifies many jQuery-based plugins that don't offer a `destroy()` method. This also means that if the Back button is pressed, the UI gets brought back, in situations where pjax or Turbolinks is used. This means that if we're loading a spot view-model which sets up its own event handlers on elements, it needs to work when the previous page comes back into view. We'll talk about how to do that below.
-3. **We will favor the use of native Browser APIs**. The browser offers a ton of functionality for free and older browsers can be patched using polyfills. CSS and its cascade. The History API. Native form elements. Custom event handlers. `querySelector` and `querySelectorAll`. jQuery is actually fine. It's just not necessary anymore. Best to use the real stuff.
+1. **We will prefer server-generated HTML.** Whether from a full page render, or if fetching just a fragment of the page, our approach will prefer server-generated HTML over JavaScript-generated HTML. As each additional level of JavaScript in the JS Gradient gets more involved, we'll move away from that ideal, but we'll start from that goal post.
+2. **The HTML on a page can be swapped out and replaced on a whim.** This will allow us to use techniques like `pjax` (replacing the whole body of a page with new HTML, which includes the [Turbolinks][turbolinks] library popular in Rails and Laravel apps) and `ahah` (asynchronous HTML over HTTP, to replace parts of a page with new HTML). This gives us the ability to make the app feel really fast, while keeping the HTML generated server-side. To do this, we'll need to make sure that when custom event handlers are added on specific elements, they should be removed when the element is removed from the page. The best way to do this is by specifying event handlers on the whole document and watching to see if they were fired by a certain element. The next best way is to use Stimulus, as it coordinates the addition and removal of event handlers as elements are detected as being added or removed from the page. This ideal disqualifies many jQuery-based plugins that don't offer a `destroy()` method. This also means that if the Back button is pressed, the UI gets brought back, in situations where pjax or Turbolinks is used. This means that if we're loading a spot view-model which sets up its own event handlers on elements, it needs to work when the previous page comes back into view. We'll talk about how to do that below.
+3. **We will favor the use of native Browser APIs.** The browser offers a ton of functionality for free and older browsers can be patched using polyfills. CSS and its cascade. The History API. Native form elements. Custom event handlers. `querySelector` and `querySelectorAll`. jQuery is actually fine. It's just not necessary anymore. Best to use the real stuff.
 
 [turbolinks]: https://github.com/turbolinks/turbolinks
 
 With those stated, let's start with the most lightweight of all JavaScript enhancements: global sprinkles. We'll then move our way up to more sophisticated JS approaches.
 
 ## Global Sprinkles
+{: #global-sprinkles }
 
 The sprinkles approach, as stated in the last chapter, has two main tools:
 
@@ -51,8 +56,9 @@ Global sprinkles are the type to add general app-level behaviour enhancement usi
 
 Rails, in particular, has a suite of helpers in its `rails-ujs` (unobtrusive js) package, which qualifies here as a global sprinkles package.
 
-Other global sprinkles tools I've heard of but haven't used: Trimmings
+Other global sprinkles tools I've heard of but haven't used: [Trimmings][trimmings].
 
+<aside markdown="1">
 ### Making it comply with ideal #2 "The HTML on a page can be swapped out and replaced on a whim"
 
 Just ensure that event handlers are specific and caught at the document level, as opposed to being set on the element itself, and you'll be fine.
@@ -60,13 +66,15 @@ Just ensure that event handlers are specific and caught at the document level, a
 [Bootstrap][bootstrap], it should be noted, has _most_ of its JS components satisfy this ideal (I think with the exception of tooltips and another one I can't remember), and would be considered a global sprinkle you could add to your project (even if it defines many component sprinkles into one global package.)
 
 [bootstrap]: https://getbootstrap.com/
+</aside>
 
 ### The treshold: When you might consider looking for something else
 
-* You find yourself globally defining some sprinkles that are tied to a specific component, and you'd like to define that component it in its own `.js` file. See _Component Sprinkles_ below.
-* You find wanting to define event handlers on specific elements, rather than catching them at the level of the document. See _Stimulus_ below.
+* You find yourself globally defining some sprinkles that are tied to a specific component, and you'd like to define that component it in its own `.js` file. See [_Component Sprinkles_](#component-sprinkles) below.
+* You find wanting to define event handlers on specific elements, rather than catching them at the level of the document. See [_Stimulus_](#stimulus) below.
 
 ## Component Sprinkles
+{: #component-sprinkles }
 
 When you find yourself wanting to have a specific page component's behaviour defined in a single `.js` file, you turn to the component sprinkles approach.
 
@@ -105,13 +113,14 @@ There are some packages that help ease the generation of HTML. I know of (but ha
 
 ### The treshold: When you might consider looking for something else
 
-* You find yourself setting up a lot of global event handlers, and it's getting cumbersome to organize them in your code. See _Stimulus_ below;
-* You find yourself needing to set up event handlers on specific elements, and setting them up on the global document is no longer possible or elegant. See _Stimulus_ below;
-* Making small edits to the HTML or refetching the HTML from the server-side is no longer feasible. See _Spot view-models_ below.
+* You find yourself setting up a lot of global event handlers, and it's getting cumbersome to organize them in your code. See [_Stimulus_](#stimulus) below;
+* You find yourself needing to set up event handlers on specific elements, and setting them up on the global document is no longer possible or elegant. See [_Stimulus_](#stimulus) below;
+* Making small edits to the HTML or refetching the HTML from the server-side is no longer feasible. See [_Spot view-models_](#spot-view-models) below.
 
 ## Stimulus - or Automated Behavior Orchestration
+{: #stimulus }
 
-I haven't found anything else quite like [Stimulus][stimulus]. Made by [Basecamp][basecamp], which they use throughout their own product, it's a novel approach that pairs a small JavaScript controller to add behavior to some HTML that defines how to use the controller to add behavior.
+I haven't found anything else quite like [Stimulus][stimulus]. Made by [Basecamp][basecamp], which they use throughout their own product, it's a novel approach that pairs a small JavaScript controller with your HTML. The Stimulus controller wires up behaviour (adds event handlers) to elements in your HTML. Elements in your HTML state which controller to use, and which controller actions to use when events occur.
 
 [basecamp]: https://basecamp.com
 
@@ -152,9 +161,9 @@ export default class extends Controller {
 
 You can go further.
 
-You can automatically add event handlers to input fields. You can have event handlers affect more than controller at a time. The HTML tells defines what JS should be fired, and the JS just responds automatically.
+You can automatically add event handlers to input fields. You can have event handlers affect more than one controller at a time. The HTML defines what JS should be fired, and the JS just responds automatically.
 
-Here's a bit of server-generated HTML whose behaviro will be automatically orchestrated via Stimulus:
+Here's a bit of server-generated HTML whose behaviour will be automatically orchestrated via Stimulus:
 
 ```html
 <input type="number" value="1" 
@@ -172,31 +181,34 @@ The magic of Stimulus, however, lies in this one trick:
 
 ### The treshold: When you might consider looking for something else
 
-* Making small edits to the HTML or refetching the HTML from the server-side is no longer feasible. For example, you have a complex form with a lot of permutations, and generating the HTML manually would be too much of a hassle. See _Spot view-models_ below.
-* I just have a JSON API endpoint for that section of my app and it would be easiest if I didn't have to generate server-generated views. See _Spot view-models_ or _SPAs_ below.
+* Making small edits to the HTML or refetching the HTML from the server-side is no longer feasible. For example, you have a complex form with a lot of permutations, and generating the HTML manually would be too much of a hassle. See [_Spot view-models_](#spot-view-models) below.
+* I just have a JSON API endpoint for that section of my app and it would be easiest if I didn't have to generate server-generated views. See [_Spot view-models_](#spot-view-models) or [_SPAs_](#spa) below.
 
+<aside markdown="1">
 ### Aside: Is Stimulus used in a production app?
 
-Stimulus is used in the latest version of Basecamp. On Stimulus' own community forum, there's a [thread on community members project built for or with Stimulus][built-with-stimulus].
+Stimulus is used in the latest version of Basecamp. On Stimulus' own community forum, there's a [thread on community members' projects built for or with Stimulus][built-with-stimulus].
 
 [built-with-stimulus]: https://discourse.stimulusjs.org/t/post-your-examples-or-open-source-projects/125/20
+</aside>
 
 ## Spot view-models
+{: #spot-view-models }
 
 Today's most popular view-models are [React][react] and [Vue][vue]. They both offer a way to define a template that will be used to create HTML, a way to morph that HTML based on changes to JavaScript objects holding a "state", and offer efficent ways (namely, DOM-diffing) to update the HTML on-the-fly as those changes to the "state" are detected.
 
 [vue]: https://vuejs.org
 [react]: https://reactjs.org
 
-Famously, React is used in Single-Page applications (SPAs). Vue also has a large user-base for building Single-Page applications.
+Famously, React is used in Single-Page applications (SPAs). Vue also has a large user-base building Single-Page applications.
 
-But for our modest needs, we'll prefer the use of spot view-models. That is, view-models that are just used in certain spots. We're not taking over the whole page here, we're just augmenting a certain page section with a data-reactive view-model.
+But for our modest needs, we'll prefer the use of spot view-models. **That is, view-models that are just used in specific spots.** We're not taking over the whole page here, we're just augmenting a certain page section with a data-reactive view-model.
 
-As stated under Threshold sub-headers in the above strategies, spot view-models come in handy when:
+As stated under the "Threshold" sub-headers in the above strategies, spot view-models come in handy when:
 
-> Making small edits to the HTML or refetching the HTML from the server-side is no longer feasible. For example, you have a complex form with a lot of permutations, and generating the HTML manually would be too much of a hassle.
+* Making small edits to the HTML or refetching the HTML from the server-side is no longer feasible. For example, you have a complex form with a lot of permutations, and generating the HTML manually would be too much of a hassle.
 
-My prefered toolkit for view-models is Vue. It's community holds values that I find are more in line with mine. Vue is opinionated in its approach, and its approachable documentation is a sign of strong positions in favour of being a "Progressive JavaScript Framework". You can use it modest ways, and that's why I'm picking it here.
+My prefered toolkit for view-models is [Vue][vue]. It's community holds values that I find are more in line with mine. Vue is opinionated in its approach, and its approachable documentation is a sign of strong positions in favour of being a "Progressive JavaScript Framework". You can use it modest ways, and that's why I'm picking it here.
 
 The root HTML for the instance of the view-model is simple: just an empty div.
 
@@ -206,7 +218,7 @@ The root HTML for the instance of the view-model is simple: just an empty div.
  data-quantity="2"></div>
 ```
 
-Which gets taken over (`mounted`) when the following js is run (we use the same `data-behavior` attribute for the selector):
+Which gets taken over (`mounted`) when the following JS is run (we use the same `data-behavior` attribute for the selector):
 
 ```js
 document.addEventListener('DOMContentLoaded', () => {
@@ -260,7 +272,7 @@ export default {
 </script>
 ```
 
-Although this is a simple example, the Vue `<template>` is where you could have more intricate logic (if-else, for loops) to change the HTML as the state objects change (which would include more than a single `quantity` property.)
+Although this example is simplistic, the Vue `<template>` is where you could have more intricate logic (`if-else` branches, `for` loops) to change the HTML as the state objects change (which would include more than a single `quantity` property.)
 
 I know but haven't tried these other (even more modest) view-models: [Reef][reef] (by [Chris Ferdinandi][cferdinandi] or _Vanilla JS_ fame), and [Svelte][svelte].
 
@@ -268,30 +280,32 @@ I know but haven't tried these other (even more modest) view-models: [Reef][reef
 [cferdinandi]: https://gomakethings.com
 [svelte]: https://svelte.dev
 
-
+<aside markdown="1">
 ### Making it comply with ideal #2 "The HTML on a page can be swapped out and replaced on a whim"
 
-Here's the problem with view-models: they're a mesh of event handlers and data mutation hooks. If you clone the HTML they output, that HTML will no longer "work". That's because all the event handlers are no longer hooked up right. So can we uphold the ideal of "The HTML on a page can be swapped out and replaced on a whim"?
+Here's the problem with view-models: they're a mesh of event handlers and data mutation hooks. If you clone the HTML they output, that HTML will no longer "work". That's because all the event handlers are no longer hooked up right. This begs the question: How can we uphold the ideal of "The HTML on a page can be swapped out and replaced on a whim"?
 
 Say you want to use a date-picker component off the web, and it's been built using a view-model.
 
-You could use Stimulus to coordinate loading or destroying the component. The Stimulus component would be a wrapper around your component. Stimulus controllers have access to two special methods to help with this. `connect()` is called when the instance of the Stimulus component is detected being added on the page. `disconnect()` is called just before the Stimulus component will be removed from the page. To bring back a Vue component right back in the exact state is was in before it was destroyed, you could serialize the component's state and store it in a `data` attribute on the parent element, to be used again on `connect()`, when it re-appears (say when the Back button is pressed when using Turbolinks.) For nested Vue components, it's a little trickier, but there's a way to serialize all sub-components.
+You could use Stimulus to coordinate loading or destroying the component. The Stimulus component would be a wrapper around your component. Stimulus controllers have access to two special methods to help with this. `connect()` is called when the instance of the Stimulus component is detected being added on the page. `disconnect()` is called just before the Stimulus component will be removed from the page. To bring back a Vue component right back in the exact state it was in before it was destroyed, you could serialize the component's state and store it in a `data` attribute on the parent element, to be used again on `connect()`, when it re-appears (say when the Back button is pressed when using Turbolinks.) For nested Vue components, it's a little trickier, but there's a way to serialize all sub-components.
+</aside>
 
 ### The treshold: When you might consider looking for something else
 
-* The compiled JavaScript from the `.vue` files is too heavy for our needs. Downgrade to a _Stimulus_ component, as described above.
-* I'm ending up create mostly empty pages that just contain the root HTML to mount my view-models on. I'm practically just using view-models for all of my page's elements. See _SPAs_ below.
-* I just have a JSON API endpoint for that section of my app and it would be easiest if I didn't have to generate server-generated views. See _SPAs_ below.
+* The compiled JavaScript from the `.vue` files is too heavy for our needs. Downgrade to a [_Stimulus_](#stimulus) component, as described above.
+* I'm ending up creating mostly empty pages that just contain the root HTML to mount my view-models on. I'm practically just using view-models for all of my page's elements. See [_SPAs_](#spa) below.
+* I just have a JSON API endpoint for that section of my app and it would be easiest if I didn't have to generate server-generated views. See [_SPAs_](#spa) below.
 
 ## <acronym>SPAs</acronym> - Single-Page Applications
+{: #spa }
 
-A single-page application is typically* an all-JavaScript affair. Reactive view-models like Vue or React are the baseline. Whole pages are handled by view-models, and the browser's handling of clicks and the back button are overriden to serve different JavaScript-generated views to the user.
+A single-page application is typically ([see one notable exception in an aside below](#stimulus_reflex)) an all-JavaScript affair. Reactive view-models like Vue or React are the baseline. Whole pages are handled by view-models, and the browser's handling of clicks and the back button are overriden to serve different JavaScript-generated views to the user.
 
 The resulting JavaScript payloads are typically large in size, affecting the performance of the first page-load. Browsers compensate by using a lot of battery-power to compute the rendering of the views. And if you want to tweak performance, there are even more clever JavaScript methods to use, including view-models that are pre-rendered on the server-side and then hydrated using fresh JSON data. It's JavaScript all the way down.
 
-As mentioned above in some of the Treshold sections, it's worth noting _when_ pulling an SPA approach into a project might make sense:
+As mentioned above in some of the "Treshold" sections, it's worth noting _when_ pulling an SPA approach into a project might make sense:
 
-* I'm ending up create mostly empty pages that just contain the root HTML to mount my view-models on. I'm practically just using view-models for all of my page's elements.
+* I'm ending up creating mostly empty pages that just contain the root HTML to mount my view-models on. I'm practically just using view-models for all of my page's elements.
 * I just have a JSON API endpoint for that section of my app and it would be easiest if I didn't have to generate server-generated views.
 
 There are other situations when an SPA might make sense, which we haven't mentioned:
@@ -301,15 +315,24 @@ There are other situations when an SPA might make sense, which we haven't mentio
 
 An SPA is the least modest JavaScript approach. Using it as the default approach is indicative of a lack of options, but there are occasions when it's the best approach.
 
+<aside markdown="1">
 ### Aside: A note on server-generated HTML when all you have is a JSON API endpoint.
 
 It's worth noting that you _can_ have server-generated HTML even if all you have is a JSON API endpoint. A node.js or Go app would be super speedy. Define the routes for the HTML views you want outputted, and fuel your HTML views with the result of fetching the data from JSON API as if it was coming from an ORM or a database.
+</aside>
 
-### *Aside: Stimulus-based server-generated SPAs
+<aside markdown="1">
+### Aside: Stimulus-based server-generated SPAs
+{: #stimulus_reflex}
 
-I've recently seen this new rails gem for creating stimulus-based server-generated single-page applications. It's called [stimulus_reflex][stimulus_reflex], and it has none of the baggage of the large-scale JavaScript-based view-model SPAs.
+I've recently seen this new Rails gem for creating stimulus-based server-generated single-page applications. It's called [stimulus_reflex][stimulus_reflex], and it has none of the baggage of the large-scale JavaScript-based view-model SPAs.
 
 Another approach, which is modest and interesting, is called [Trimmings][trimmings].
+</aside>
 
 [trimmings]: https://postlight.com/trackchanges/back-to-html-introducing-trimmings
 [stimulus_reflex]: https://github.com/hopsoft/stimulus_reflex
+
+---
+
+So there you have it. You can build apps that do a lot just by having a few JavaScript sprinkles. In spots when you need more interactivity (you need to coordinate adding/removing more event handlers), there's Stimulus. And for those spots where the view changes a lot depending on the data you receive, consider spot view-models or SPAs.

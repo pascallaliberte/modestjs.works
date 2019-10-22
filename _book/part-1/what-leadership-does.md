@@ -15,7 +15,7 @@ Right there, reading those words, you might be engulfed in thoughts, imaginary c
 
 You're probably thinking thoughts like this:
 
-* If I propose for us to take up more modest js approaches, I'll surely be peppered with questions or dismissed.
+* If I propose for us to take up more modest JS approaches, I'll surely be peppered with questions or dismissed.
 * If I propose we change the way we do things, I might be seen as not part of the crowd.
 
 **Hold those thoughts.** Take note, park them. That internal pushback is important for your _leadership_.
@@ -44,7 +44,7 @@ By answering our own thoughts with words like "maybe", we're already doing some 
 
 But let's go further and let's rewrite our thoughts.
 
-* ~~If I propose for us to take up more modest js approaches, I'll surely be peppered with questions or dismissed.~~<br> _If I propose for us to take up more modest js approaches, people's reactions will be helpful information so I can learn what people want in their jobs, and it might be that more modesty will actually help them progress toward those goals._
+* ~~If I propose for us to take up more modest JS approaches, I'll surely be peppered with questions or dismissed.~~<br> _If I propose for us to take up more modest JS approaches, people's reactions will be helpful information so I can learn what people want in their jobs, and it might be that more modesty will actually help them progress toward those goals._
 * ~~If I propose we change the way we do things, I might be seen as not part of the crowd.~~<br> _If I propose a new way of doing things while considering what each person wants to have progress on, maybe my ideas will be of service to the team._
 
 Re-write your thoughts and then take the lead. It's what leadership does.

@@ -298,7 +298,7 @@ The `cart.vue` is more complex. It uses sub-components `cart-item.vue` and `curr
 In this example, we've seen how a UI like this can be
 
 * mostly driven by back-end markup, saving us from having to use a Single Page Application (SPA) approach;
-* split up in different components, even when using the vanilla js approach, since we're using a packager;
+* split up in different components, even when using the vanilla JS approach, since we're using a packager;
 * made to have the different components communicate their state to each other (the `cart-quantity` gets told to update on quantity changes);
 * made to use few dependencies, and be built to work for a long time.
 
