@@ -7,7 +7,9 @@ part: 1
 
 They say that in life, there are no leaders, just people who take a lead.
 
-Will you take the lead?
+**Will you take the lead?**
+
+---
 
 Right there, reading those words, you might be engulfed in thoughts, imaginary consequences, in a defensive state. You're probably a little excited, a little apprehensive (let's use the true word: scared), probably a mix of these.
 
@@ -16,7 +18,9 @@ You're probably thinking thoughts like this:
 * If I propose for us to take up more modest js approaches, I'll surely be peppered with questions or dismissed.
 * If I propose we change the way we do things, I might be seen as not part of the crowd.
 
-Hold those thoughts. Take note, park them. That internal pushback is important for your leadership.
+**Hold those thoughts.** Take note, park them. That internal pushback is important for your _leadership_.
+
+---
 
 Now, let's have a brief aside about two kinds of "managers". ("But I'm not a manager" -- hang on, you'll see where I'm going.)
 
@@ -26,15 +30,21 @@ In the book _[Leadership Agility][agility]_, the author proposes that what disti
 
 Now we're getting to the important part: what separates the two is that the average manager will be confined by ego, the great manager won't be confined at all. That's because the great manager doesn't just value effectiveness or doing the right thing. The great manager isn't confined by ego because she learned to detect ego _on the spot_.
 
-Ego detection. It's _that_ trait that separates the average manager from the great one. A sense of introspection, of being able to in-real-time detect the workings of their defensive mechanisms, their biases, their prejudices, their mental models, their in-the-moment convictions.
+Ego detection. **It's _that_ trait that separates the average manager from the great one.** A sense of introspection, of being able to in-real-time detect the workings of their defensive mechanisms, their biases, their prejudices, their mental models, their in-the-moment convictions.
+
+---
 
 Back to you now: speaking of in-the-moment convictions, they're just like the ones we identified above **when I asked if you would lead**.
 
-The great leaders are able to catch and rewrite their convictions on-the-spot, as they come up. Will you be met with disagreement and rebuke? Possibly. Maybe. We'll see! By answering with those answers, we're already doing some rewriting.
+The great leaders are able to catch and rewrite their convictions on-the-spot, as they come up.
+
+* Will you be met with disagreement and rebuke? Possibly. Maybe. We'll see!
+
+By answering our own thoughts with words like "maybe", we're already doing some rewriting.
 
 But let's go further and let's rewrite our thoughts.
 
-* ~~If I propose for us to take up more modest js approaches, I'll surely be peppered with questions or dismissed~~. _If I propose for us to take up more modest js approaches, people's reactions will be helpful information so I can learn what people want in their jobs, and it might be that more modesty will actually help them progress toward those goals._
-* ~~If I propose we change the way we do things, I might be seen as not part of the crowd.~~ _If I propose a new way of doing things while considering what each person wants to have progress on, maybe my ideas will be of service to the team._
+* ~~If I propose for us to take up more modest js approaches, I'll surely be peppered with questions or dismissed.~~<br> _If I propose for us to take up more modest js approaches, people's reactions will be helpful information so I can learn what people want in their jobs, and it might be that more modesty will actually help them progress toward those goals._
+* ~~If I propose we change the way we do things, I might be seen as not part of the crowd.~~<br> _If I propose a new way of doing things while considering what each person wants to have progress on, maybe my ideas will be of service to the team._
 
 Re-write your thoughts and then take the lead. It's what leadership does.
