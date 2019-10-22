@@ -32,9 +32,11 @@ And there are other approaches emerging. [Svelte][svelte] and [Reef][reef] are m
 
 **"What's special about the companies that keep away from the heavy-JS nonsense?"**
 
-I don't have answers to those questions, but my book's `Part 1` is about some principles that hope to give decision-making guardrails to try to work within.
+My answer to those questions: bet on modesty.
 
-Those principles, they're about **how to inject modesty in the JavaScript fast-paced, break-code dev culture**.
+---
+
+My book's `Part 1` is about some principles that hope to give decision-making guardrails to try to work within. Those principles, they're about **how to inject modesty in the JavaScript fast-paced, break-code dev culture**.
 
 For example, in the chapter `Upgrading (the idea of) dependencies`, we look at what it means to be dependent, and that the opposite of being dependent is not merely being _independent_.
 
