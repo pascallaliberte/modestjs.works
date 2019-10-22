@@ -1,0 +1,40 @@
+---
+layout: default
+class: book
+---
+
+<div class="book-wrapper">
+  <div class="book-canvas" id="contents">
+  {% include book-nav.html %}
+
+  <div class="book-content">
+  <header class="heading">
+    {% include modestjs-works-logo.svg %}
+    {% include ebook-tab.svg %}
+  </header>
+
+  <article itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post__container">
+      <header class="post__header">
+        <h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>
+      </header>
+
+      <div class="post__content" itemprop="articleBody">
+        {{ content }}
+      </div>
+      
+      {% if page.next.url %} 
+      <div class="book-next-link-wrapper">
+        <strong>Next</strong><br>
+        <a class="book-next-link text-link"
+           href="{{ page.next.url }}">
+          <span class="book-next-link-title">{{ page.next.title }} →</span>
+        </a>
+      </div>
+      {% endif %}
+      
+    </div>
+  </article>
+  </div>
+  </div>
+</div>

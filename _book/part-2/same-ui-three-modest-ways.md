@@ -1,29 +1,44 @@
 ---
-layout: book-sample
-title:  "First Example: 3 Modest Ways to Code a Cart Page"
+layout: book
+title: Building the Same UI Three Modest Ways
+index: 52
+part: 2
 ---
 
-As a first example, let's take a shopping cart. Like this one:
+As an example, let's take a shopping cart. Like this one:
 
 ![cart example](/assets/images/post/cart-example-01.jpg)
 
-That whole page could be managed via a Single-Page Application (SPA), but let's see how to make this more modest. That means the markup will be prepared server-side, and we'll add behaviour via JavaScript.
+That whole page could be managed via a Single-Page Application (SPA), but let's see how to make this more modest. That means the HTML will be prepared server-side, and we'll add behaviour via JavaScript.
 
 On this page, there are two components in need of some added behaviour:
 
-1. the `cart`, listing the items in the middle of the page, allowing the user to change the quantity of each item
-2. the `cart-quantity`, in the top right, showing the overall quantity in the cart
+1. the `cart`, listing the items in the middle of the page, allowing the user to change the quantity of each item;
+2. the `cart-quantity`, in the top right, showing the overall quantity in the cart.
 
-Modern JS allows us to define the JavaScript code for each component separately, and then combined together using a compiler like webpack, and so that's what we'll do.
+Modern JS allows us to define the JavaScript code for each component separately, and then combined together using a compiler like [Webpack][webpack], and so that's what we'll do.
 
-## Strategy 1: Vanilla JS
+[webpack]: https://webpack.js.org
+
+## Approach <abbr title="number">No.</abbr> 1: Sprinkles
 
 [See the demo][vanilla-demo] or [browse the source code][vanilla-repo]
 
 [vanilla-demo]: https://cart-vanilla.modestjs.works
 [vanilla-repo]: https://github.com/pascallaliberte/examples.modestjs.works/tree/master/cart/vanilla
 
-All of the interactivity is bound to the quantity field. Changing the quantity will trigger these updates:
+The first approach entails sprinkling some custom behaviour onto server-generated HTML.
+
+The lightweight Sprinkles approach has two main ideas:
+
+1. Adding event listeners, preferably caught all the way up at the document level instead of on the element itself, to catch user interactions and respond with...
+2. Making small updates to the page's elements -- adding or removing classes, changing text in places, modifying element attributes.
+
+Together, these two ideas combine to produce the most modest approach to add interactivity to a page.
+
+For our cart example, all of the interactivity is centred on the quantity field. That's the only place where user input is being caught. We'll set up the event listener further below, but first, let's think of what to do when the quantity field is updated by the user.
+
+Changing the quantity will trigger these updates:
 
 * the item's subtotal will be updated;
 * the cart's subtotal will be updated too;
@@ -102,18 +117,18 @@ function enableQuantityFields() {
 enableQuantityFields()
 ```
 
-Notice too how we're using the `data-behavior` attribute instead of using an html `class` or `id` to associate our JavaScript with an element on the page. That allows designers to change the classes freely without fear of affecting the behaviour.
+Notice too how we're using the `data-behavior` attribute instead of using an html `class` or `id` to associate our JavaScript with an element on the page. That allows designers to change the classes freely without fear of affecting the behaviour. That trick comes from the folks at Basecamp. This next approach comes from the folks at Basecamp too: Stimulus.
 
-That trick comes from the folks at Basecamp. This next strategy comes from the folks at Basecamp too: Stimulus.
-
-## Strategy 2: Stimulus
+## Approach <abbr title="number">No.</abbr> 2: Stimulus
 
 [See the demo][stimulus-demo] or [browse the source code][stimulus-repo] for the Stimulus demo.
 
 [stimulus-demo]: https://cart-stimulus.modestjs.works
 [stimulus-repo]: https://github.com/pascallaliberte/examples.modestjs.works/tree/master/cart/stimulus
 
-[Stimulus][stimulus] is a small JavaScript framework allowing to automate adding behaviour to page elements as they're added to the page. Just like `css` automatically adds styling when an element is added to the page, `stimulus` watches the `DOM` (Document Object Model) for new elements, and wires them up with behaviour defined in Stimulus controllers.
+[Stimulus][stimulus] is a small JavaScript framework allowing to automate adding behaviour to page elements as they're added to the page. That's handy, since that spares us from adding event listeners to the page manually. How does it do that?
+
+Just like `css` automatically adds styling when an element is added to the page, `stimulus` watches the `DOM` (Document Object Model) for new elements, and wires them up with behaviour defined in Stimulus controllers.
 
 [stimulus]: https://stimulusjs.org
 
@@ -207,11 +222,11 @@ export default class extends Controller {
 
 Stimulus makes the JavaScript behaviour layer more readable and pleasant.
 
-Both the Vanilla JS example and the Stimulus example rely on the server to generate the markup. The state (the data) is stored in data attributes in the markup itself.
+Both the Sprinkles example and the Stimulus example rely on the server to generate the markup. The state (the data) is stored in data attributes in the markup itself.
 
-This last strategy explores what it's like to create the markup in the JavaScript, and have it react to changes in the values of the data.
+This last approach explores what it's like to create the markup in the JavaScript, and have it react to changes in the values of the data.
 
-## Strategy 3: Spot view-models
+## Approach <abbr title="number">No.</abbr> 3: Spot view-models
 
 [See the demo][spot-vue-demo] or [browse the source code][spot-vue-repo] for the view-models demo.
 
@@ -219,20 +234,21 @@ This last strategy explores what it's like to create the markup in the JavaScrip
 [spot-vue-repo]: https://github.com/pascallaliberte/examples.modestjs.works/tree/master/cart/spot-vue
 
 
-View-models (like Vue and React) are made to update the DOM when changes in the data occur. While Stimulus listens to changes in the DOM to fire methods in the controller, View-models listen to changes in the model (the data) to change the view (the markup).
+View-models (like [Vue][vue] and [React][react]) are made to update the DOM when changes in the data occur. While [Stimulus][stimulus] watches for changes in the DOM to connect or disconnect controllers and their event handlers, View-models watches for changes in the model (the data) to change the view (the markup).
 
-This can be handy when changes in the data can end up creating multiple permutations to a view.
+This can be useful when changes in the data can end up creating multiple permutations to a view.
 
-While our cart example doesn't produce many permutations in the view, let's still see how we can integrate a view-models without going all-in with a Single-Page application (SPA).
+Although our cart example doesn't produce many permutations in the view, let's still see how we can integrate view-models without going all-in with a Single-Page application (SPA).
 
 To avoid the SPA approach, we'll use view-models just in the spots of the page where we need reactivity.
 
 * the `cart` will be managed by its own view-model
-* the `cart-quantity` could be managed using a plain vanilla component like in Strategy 1, but let's manage it using a view-model too.
+* the `cart-quantity` could be managed using a plain sprinkles component like in Approach 1, but let's manage it using a view-model too.
 
-In this case, let's use [Vue.js][vuejs], which is approachable enough to just use it in spots on an overall back-end driven page.
+In this case, let's use [Vue][vue], which is approachable enough to just use it in spots on an overall back-end driven page.
 
-[vuejs]: https://vuejs.org
+[vue]: https://vuejs.org
+[react]: https://reactjs.org
 
 Here's the `.vue` file for the `cart-quantity` view-model:
 
@@ -247,14 +263,20 @@ Here's the `.vue` file for the `cart-quantity` view-model:
 export default {
   data() {
     return {
-      quantity: {},
+      quantity: {}, // changes to the quantity will change 
+                    // the html automatically, according to the template
     }
   },
   mounted() {
     this.quantity = JSON.parse(this.$el.parentNode.getAttribute('data-quantity'))
+    
+    // as this view-model is initialized (mounted), we listen for updated 
+    // quantity events
     document.addEventListener('cart-quantity-updated', this.getNewQuantity)
   },
   beforeDestroy() {
+    // because we manually added an event listener, we need to remove it
+    // before we destroy the vue
     document.removeEventListener('cart-quantity-updated', this.getNewQuantity)
   },
   methods: {
@@ -267,7 +289,7 @@ export default {
 </script>
 ```
 
-When the Vue instance is `mounted`, the quantity is taken from a `data-quantity` attribute on the instance's `parentNode`. With Vue, that's an approach that saved a few kbs, because we don't need the html parser that's packaged with the whole Vue.js bundle.
+When the Vue instance is `mounted()`, which is the method that's fired when Vue takes over the element it's tied to, the quantity is taken from a `data-quantity` attribute on the instance's `parentNode`. With Vue, that's an approach that saved a few kbs, because we don't need the html parser that's packaged with the whole Vue bundle.
 
 ```html
 <div class="col text-right" 
@@ -275,7 +297,7 @@ When the Vue instance is `mounted`, the quantity is taken from a `data-quantity`
  data-quantity="2"></div>
 ```
 
-And to mount the instance, we use this approach, again saving us from requiring the Vue.js html parser, saving us a few kbs.
+And to mount the instance, we use this approach, again saving us from requiring the Vue html parser, saving us a few kbs.
 
 ```js
 document.addEventListener('DOMContentLoaded', () => {
@@ -293,17 +315,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 The `cart.vue` is more complex. It uses sub-components `cart-item.vue` and `currency.vue` to manage each cart-item and to print out a properly formatted currency. [Check out the repo][spot-vue-repo] for all the details.
 
-## Three ways to be modest
+## Three Ways to Be Modest
 
-In this example, we've seen how a UI like this can be
+In this example, we've seen how a UI like this can be made using either one of these three ways to be modest:
 
-* mostly driven by back-end markup, saving us from having to use a Single Page Application (SPA) approach;
-* split up in different components, even when using the vanilla JS approach, since we're using a packager;
-* made to have the different components communicate their state to each other (the `cart-quantity` gets told to update on quantity changes);
+1. **Sprinkles**: a combination of modest DOM changes paired with globally-defined event handlers;
+2. **Stimulus**: a way to automatically add/remove event handlers to elements as they're added to/removed from the DOM;
+3. **Spot view-models**: upgrading only some components to be reactive to data changes, when needed.
+
+All three approaches were:
+
+* mostly driven by server-generated HTML, saving us from having to use a Single Page Application (SPA) approach;
+* split-up in different components, even when using the Sprinkles approach, since we're using a packager;
+* made to have the different components communicate their state to each other via dispatching events and event handlers (e.g. the `cart-quantity` gets told to update on quantity changes);
 * made to use few dependencies, and be built to work for a long time.
 
-Next, let's look at what it means to deal with dependencies, or rather more broadly, what it means to be _dependent_.
-
----
-
-Hi, I'm [Pascal Laliberté](https://pascallaliberte.me). This was a sample chapter from the [_Modest JS Works_](/) book I'm currently writing. It'll be a short book of higher-order principles, and like in this chapter, some practical examples, of how to be more modest when writing the behavioral language of the web, JavaScript. Sign-up below to be notified on the progress, and spread the word. Let's write modest JavaScript that's going to last a while.
+Next, we ask the question: How can we use all three approaches in one project?

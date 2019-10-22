@@ -26,6 +26,12 @@ languages: ["en"]
 
 permalink: /articles/:categories/:title/
 
+collections:
+  book:
+    sort_by: index
+    output: true
+    permalink: /:collection/:path/
+
 ### Google webmaster tools, Google Analytics, Doorbell and Cookie consent uncomment and put the API key
 #webmaster_verifications:
 #  google: verification_code
@@ -43,8 +49,11 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   # - octopress-minify-html
-  - jekyll-multiple-languages-plugin
+  # - jekyll-multiple-languages-plugin
   # - amp-jekyll
+
+include:
+  - _redirects
 
 ### Exclude from processing.
 exclude:

@@ -1,0 +1,37 @@
+<nav class="book-nav">
+
+{% assign part1chapters = site.book | where_exp:"item", "item.part == 1" %}
+{% assign part2chapters = site.book | where_exp:"item", "item.part == 2" %}
+
+<div class="book-nav-toggle">
+  <a href="#">
+    Return
+    {% include arrow-right.svg %}
+  </a>
+  <a href="#contents">
+    {% include menu.svg %}
+    Contents
+  </a>
+</div>
+
+<div class="book-nav-list">
+
+<ul>
+  <li><span class="book-nav-part-num">Part 1</span>
+    <ul>
+      {% for chapter in part1chapters %}  
+        <li><a href="{{ chapter.url }}" {% if chapter.url == page.url %}class="active"{% endif %}>{{ chapter.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </li>
+  <li><span class="book-nav-part-num">Part 2</span>
+    <ul>
+      {% for chapter in part2chapters %}
+        <li><a href="{{ chapter.url }}" {% if chapter.url == page.url %}class="active"{% endif %}>{{ chapter.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </li>
+</ul>
+
+</div>
+</nav>

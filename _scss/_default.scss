@@ -9,6 +9,7 @@ $primary-color: #26B4A5;
 $primary-dark-color: #4C7671;
 $secondary-color: #4C648A;
 $text-color: #676767;
+$shadow-color: #575757;
 $link-color: $primary-color;
 $highlight-color: $primary-color;
 
@@ -19,10 +20,11 @@ $font-xs: 16px;
 
 $system-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 $primary-font-family: 'Lato', $system-font-family;
-$mono-font-family: 'Inconsolata', monospace, $system-font-family;
+$secondary-font-family: 'Noto Serif', serif;
+$mono-font-family: 'Source Code Pro', monospace, $system-font-family;
 
 $reference-width-xs:    375px;
-$reference-width-xs-until: 525px;
+$reference-width-xs-until: 500px;
 $reference-width-md:    768px;
 $reference-width-md-until: 850px;
 $reference-width-xl: 1024px;
@@ -50,7 +52,7 @@ $reference-width-xl: 1024px;
     padding-left: $container-padding * 2;
     padding-right: $container-padding;
     
-    font-size: rem(14px);
+    font-size: rem(18px);
     line-height: (25 / 18);
     
     margin-bottom: rem(100px);
@@ -69,7 +71,7 @@ $reference-width-xl: 1024px;
   main {
     padding: rem(18px);
     width: rem(496px);
-    margin-left: rem(100px);
+    margin-left: rem(200px);
     
     font-size: rem(18px);
     line-height: (25 / 18);
@@ -78,7 +80,7 @@ $reference-width-xl: 1024px;
   }
   
   body::before {
-    width: calc(100vw - 10rem);
+    width: calc(100vw - 20rem);
   }
 }
 
@@ -90,7 +92,7 @@ $reference-width-xl: 1024px;
   main {
     flex: 1;
     padding: rem(18px);
-    width: rem(496px);
+    width: rem(640px);
     margin-left: rem(257px);
     
     font-size: rem(18px);
@@ -148,7 +150,9 @@ li {
   margin-bottom: 1em;
 }
 
-
+pre, code, kbd, samp {
+  font-family: $mono-font-family;
+}
 
 // Shared
 
@@ -218,4 +222,10 @@ li {
     color: $link-color;
   }
 
+}
+
+hr {
+  border-top: rem(5px) solid lighten($link-color, 40%);
+  max-width: rem(150px);
+  margin: 2em auto 2em 0;
 }
