@@ -35,9 +35,15 @@ collections:
 defaults:
   -
     scope:
-      path:            "book"
+      path:    ""
+      type:    "book"
     values:
-      sitemap:         false
+      sitemap: false
+  -
+    scope:
+      path:    "book/sample/**"
+    values:
+      sitemap: false
 
 ### Google webmaster tools, Google Analytics, Doorbell and Cookie consent uncomment and put the API key
 #webmaster_verifications:
