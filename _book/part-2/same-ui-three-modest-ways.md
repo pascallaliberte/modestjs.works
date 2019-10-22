@@ -5,7 +5,7 @@ index: 52
 part: 2
 ---
 
-As a first example, let's take a shopping cart. Like this one:
+As an example, let's take a shopping cart. Like this one:
 
 ![cart example](/assets/images/post/cart-example-01.jpg)
 
@@ -13,19 +13,21 @@ That whole page could be managed via a Single-Page Application (SPA), but let's 
 
 On this page, there are two components in need of some added behaviour:
 
-1. the `cart`, listing the items in the middle of the page, allowing the user to change the quantity of each item
-2. the `cart-quantity`, in the top right, showing the overall quantity in the cart
+1. the `cart`, listing the items in the middle of the page, allowing the user to change the quantity of each item;
+2. the `cart-quantity`, in the top right, showing the overall quantity in the cart.
 
-Modern JS allows us to define the JavaScript code for each component separately, and then combined together using a compiler like webpack, and so that's what we'll do.
+Modern JS allows us to define the JavaScript code for each component separately, and then combined together using a compiler like [Webpack][webpack], and so that's what we'll do.
 
-## Approach 1: Sprinkles
+[webpack]: https://webpack.js.org
+
+## Approach <abbr title="number">No.</abbr> 1: Sprinkles
 
 [See the demo][vanilla-demo] or [browse the source code][vanilla-repo]
 
 [vanilla-demo]: https://cart-vanilla.modestjs.works
 [vanilla-repo]: https://github.com/pascallaliberte/examples.modestjs.works/tree/master/cart/vanilla
 
-The first approach entails sprinkling some custom behavior onto server-generated HTML.
+The first approach entails sprinkling some custom behaviour onto server-generated HTML.
 
 The lightweight Sprinkles approach has two main ideas:
 
@@ -117,7 +119,7 @@ enableQuantityFields()
 
 Notice too how we're using the `data-behavior` attribute instead of using an html `class` or `id` to associate our JavaScript with an element on the page. That allows designers to change the classes freely without fear of affecting the behaviour. That trick comes from the folks at Basecamp. This next approach comes from the folks at Basecamp too: Stimulus.
 
-## Approach 2: Stimulus
+## Approach <abbr title="number">No.</abbr> 2: Stimulus
 
 [See the demo][stimulus-demo] or [browse the source code][stimulus-repo] for the Stimulus demo.
 
@@ -224,7 +226,7 @@ Both the Sprinkles example and the Stimulus example rely on the server to genera
 
 This last approach explores what it's like to create the markup in the JavaScript, and have it react to changes in the values of the data.
 
-## Approach 3: Spot view-models
+## Approach <abbr title="number">No.</abbr> 3: Spot view-models
 
 [See the demo][spot-vue-demo] or [browse the source code][spot-vue-repo] for the view-models demo.
 
