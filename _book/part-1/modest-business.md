@@ -15,6 +15,6 @@ Trying to find product-market fit? It's mostly a timing game. And you can put ti
 
 So build something modest, and be patient.
 
-Don't build more JS than you can maintain over the long term. If you're going to be building something for a long time, make sure what you are building will grow with you. Make sure you don't depend on other people's work too much, lest you want to keep refactoring your code when the framework-du-jour goes out of style.
+Don't build more JS than you can maintain over the long term. If you're going to be building something for a long time, make sure what you are building will grow with you. Make sure you don't depend on other people's work too much, lest you want to keep refactoring your code when the framework you picked goes out of style.
 
 Are you working for an immodest company? If so, focus on your skills, get good at the basics, and get good at understanding the buyer. A modest company will be happy to find you.
