@@ -16,4 +16,8 @@ To _Jonathan Snook_ for the links to the [crowdfunding of the development of the
 
 To _Chris Ferdinandi_ for his awesome daily posts on writing Vanilla JS.
 
-And to the teachers and personal development coaches for helping me develop my stances, my positions, and help me part with some ego.
+To _Ryan Singer_ of Basecamp for setting the example of how to be thoughtful in product strategy, and for putting his [Shape Up][shapeup] book out on the web as a web book.
+
+[shapeup]: https://basecamp.com/shapeup/
+
+And to the teachers and personal development influences for helping me develop my stances and help me part with some ego. I'm thinking of Michel, Nicole, Caroline and Pierre-Olivier. Thank you.
