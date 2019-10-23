@@ -7,7 +7,7 @@ part: 1
 
 It seems to me that the JavaScript ecosystem got a little too technical. That seems like an odd thing to say for a programming language and its culture, but not all programming languages fall into that too-technical trap. Some programming languages have a different culture: Ruby stands for elegance. Swift and Go stand for speed and approachability.
 
-JavaScript is evolving new syntax. Newer transpilers, syntax checkers and optimizers have made it possible to do new things with JavaScript that don't depend on browser adoption as much. And front-end librairies have helped boost the new field of DesignOps. It's an exciting time to be technical and working with JavaScript.
+JavaScript is evolving new syntax. Newer transpilers, syntax checkers and optimizers have made it possible to do new things with JavaScript that don't depend on browser adoption as much. And front-end libraries have helped boost the new field of DesignOps. It's an exciting time to be technical and working with JavaScript.
 
 But, in all this excitement, JavaScript's culture got too technical, too quickly. The `npm` registry motors the culture in an inevitable direction: more technical innovation please. To be seen as a coder, you've got to publish a piece of code. To be seen as an interaction designer, you've got to use more code too.
 
@@ -29,7 +29,7 @@ This mini-book comes in two parts.
 
 It assumes you already have some experience with JavaScript and its ecosystem. Although the intro to Part 2 includes a glossary with some descriptions, you should already know enough about the basic syntax of JavaScript and the way the browser loads pages, specifically the idea of event handlers. 
 
-You'll have experienced the problems this book wants to address if you have tried and have struggled with some modern JavaScript librairies like React or Vue, struggled making Single-Page Apps or don't find you can relate with a lot of the other people working in the JavaScript ecosystem.
+You'll have experienced the problems this book wants to address if you have tried and have struggled with some modern JavaScript libraries like React or Vue, struggled making Single-Page Apps or don't find you can relate with a lot of the other people working in the JavaScript ecosystem.
 
 Or maybe you've tried influencing your team toward more modest practices already.
 
