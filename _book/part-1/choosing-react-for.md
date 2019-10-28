@@ -25,7 +25,7 @@ Let's see where React is being used:
 
 [brad-frost-components]: http://bradfrost.com/blog/post/frontend-design-react-and-a-bridge-over-the-great-divide/
 
-React is beind "hired" (in the [Jobs-to-Be-Done][jtbd-intro] sense) as a middle-of-the-road, please-everyone, take-over-the-front-end approach.
+React is being "hired" (in the [Jobs-to-Be-Done][jtbd-intro] sense) as a middle-of-the-road, please-everyone, take-over-the-front-end approach.
 
 [jtbd-intro]: https://sharpen.page/jtbd/intro-to-jobs-to-be-done-through-examples/
 
