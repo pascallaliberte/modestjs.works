@@ -17,14 +17,14 @@
 <div class="book-nav-list">
 
 <ul>
-  <li><span class="book-nav-part-num">Part 1</span>
+  <li><span class="book-nav-part-num">Part 1 - Principles</span>
     <ul>
       {% for chapter in part1chapters %}  
         <li><a href="{{ chapter.url }}" {% if chapter.url == page.url %}class="active"{% endif %}>{{ chapter.title }}</a></li>
       {% endfor %}
     </ul>
   </li>
-  <li><span class="book-nav-part-num">Part 2</span>
+  <li><span class="book-nav-part-num">Part 2 - Concrete ways</span>
     <ul>
       {% for chapter in part2chapters %}
         <li><a href="{{ chapter.url }}" {% if chapter.url == page.url %}class="active"{% endif %}>{{ chapter.title }}</a></li>
