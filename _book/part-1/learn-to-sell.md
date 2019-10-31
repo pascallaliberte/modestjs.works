@@ -5,7 +5,7 @@ index: 32
 part: 1
 ---
 
-If you have a business idea, you'll need to learn to sell. And if you're working for someone else, you'll need to learn to sell you _ideas_.
+If you have a business idea, you'll need to learn to sell. And if you're working for someone else, you'll need to learn to sell your _ideas_.
 
 The short version of how selling works? **Benefits must outweigh costs.**
 
