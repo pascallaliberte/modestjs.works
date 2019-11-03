@@ -13,7 +13,7 @@ They say that in life, there are no leaders, just people who take a lead.
 
 Right there, reading those words, you might be engulfed in thoughts, imaginary consequences, in a defensive state. You're probably a little excited, a little apprehensive (let's use the true word: scared), probably a mix of these.
 
-You're probably thinking thoughts like this:
+You're probably thinking thoughts like these:
 
 * If I propose for us to take up more modest JS approaches, I'll surely be peppered with questions or dismissed.
 * If I propose we change the way we do things, I might be seen as not part of the crowd.
