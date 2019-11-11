@@ -52,7 +52,7 @@ In `Part 2`, I make the case for `The JS Gradient`, a principle whereby your app
 Hope this helps.  
 [Pascal Laliberté][me]
 
-[me]: https://pascallaliberte.me
+[me]: /book/part-2/about-the-author/
 
 <div class="book-next-link-wrapper">
   <strong>Next</strong><br>
