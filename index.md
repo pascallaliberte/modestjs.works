@@ -52,8 +52,12 @@ In `Part 2`, I make the case for `The JS Gradient`, a principle whereby your app
 Hope this helps.  
 [Pascal Laliberté][me]
 
----
-
-If you'd like to support this book project, sign-up below to be notified on the writing progress and to be the first to know when it's ready. Spread the word too.
-
 [me]: https://pascallaliberte.me
+
+<div class="book-next-link-wrapper">
+  <strong>Next</strong><br>
+  <a class="book-next-link text-link"
+     href="/book">
+    <span class="book-next-link-title">Start Reading →</span>
+  </a>
+</div>
