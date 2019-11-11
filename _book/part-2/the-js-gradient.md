@@ -60,6 +60,7 @@ Other global sprinkles tools I've heard of but haven't used: [Trimmings][trimmin
 
 <aside markdown="1">
 ### Making it comply with ideal #2 "The HTML on a page can be swapped out and replaced on a whim"
+{: #global-sprinkles-with-ideal-swapping-html-on-a-whim }
 
 Just ensure that event handlers are specific and caught at the document level, as opposed to being set on the element itself, and you'll be fine.
 
@@ -69,6 +70,7 @@ Just ensure that event handlers are specific and caught at the document level, a
 </aside>
 
 ### The treshold: When you might consider looking for something else
+{: #global-sprinkles-threshold }
 
 * You find yourself globally defining some sprinkles that are tied to a specific component, and you'd like to define that component it in its own `.js` file. See [_Component Sprinkles_](#component-sprinkles) below.
 * You find wanting to define event handlers on specific elements, rather than catching them at the level of the document. See [_Stimulus_](#stimulus) below.
