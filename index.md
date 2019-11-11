@@ -58,6 +58,6 @@ Hope this helps.
   <strong>Next</strong><br>
   <a class="book-next-link text-link"
      href="/book">
-    <span class="book-next-link-title">Start Reading →</span>
+    <span class="book-next-link-title">Start Reading the Book →</span>
   </a>
 </div>
