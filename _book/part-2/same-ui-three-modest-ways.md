@@ -21,6 +21,7 @@ Modern JS allows us to define the JavaScript code for each component separately,
 [webpack]: https://webpack.js.org
 
 ## Approach <abbr title="number">No.</abbr> 1: Sprinkles
+{: #sprinkles }
 
 [See the demo][vanilla-demo] or [browse the source code][vanilla-repo]
 
@@ -120,6 +121,7 @@ enableQuantityFields()
 Notice too how we're using the `data-behavior` attribute instead of using an html `class` or `id` to associate our JavaScript with an element on the page. That allows designers to change the classes freely without fear of affecting the behaviour. That trick comes from the folks at Basecamp. This next approach comes from the folks at Basecamp too: Stimulus.
 
 ## Approach <abbr title="number">No.</abbr> 2: Stimulus
+{: #stimulus }
 
 [See the demo][stimulus-demo] or [browse the source code][stimulus-repo] for the Stimulus demo.
 
@@ -227,6 +229,7 @@ Both the Sprinkles example and the Stimulus example rely on the server to genera
 This last approach explores what it's like to create the markup in the JavaScript, and have it react to changes in the values of the data.
 
 ## Approach <abbr title="number">No.</abbr> 3: Spot view-models
+{: #spot-view-models }
 
 [See the demo][spot-vue-demo] or [browse the source code][spot-vue-repo] for the view-models demo.
 

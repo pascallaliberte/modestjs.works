@@ -60,6 +60,7 @@ Other global sprinkles tools I've heard of but haven't used: [Trimmings][trimmin
 
 <aside markdown="1">
 ### Making it comply with ideal #2 "The HTML on a page can be swapped out and replaced on a whim"
+{: #global-sprinkles-with-ideal-swapping-html-on-a-whim }
 
 Just ensure that event handlers are specific and caught at the document level, as opposed to being set on the element itself, and you'll be fine.
 
@@ -69,6 +70,7 @@ Just ensure that event handlers are specific and caught at the document level, a
 </aside>
 
 ### The treshold: When you might consider looking for something else
+{: #global-sprinkles-threshold }
 
 * You find yourself globally defining some sprinkles that are tied to a specific component, and you'd like to define that component it in its own `.js` file. See [_Component Sprinkles_](#component-sprinkles) below.
 * You find wanting to define event handlers on specific elements, rather than catching them at the level of the document. See [_Stimulus_](#stimulus) below.
@@ -97,6 +99,7 @@ enableQuantityFields()
 **Tip**: instead of checking if the event was fired on an element with a certain `id` (which can only be defined once on a page) or with a certain `class` (which is preferably used for assigning styling), it's better to add a `data-behavior` attribute to the element, and giving it a name reserved for the JavaScript world. In the case above: `<input type="number" data-behavior="cart-item-quantity">`
 
 ### Making bigger changes to the HTML
+{: #component-sprinkles-bigger-dom-changes }
 
 Although sprinkles are meant to just make modest changes to the HTML (adding or removing classes, changing text or input field values), there might come a time when you need to update more of the HTML in response to a user interaction.
 
@@ -112,6 +115,7 @@ There are some packages that help ease the generation of HTML. I know of (but ha
 [hyperhtml]: https://viperhtml.js.org/hyper.html
 
 ### The treshold: When you might consider looking for something else
+{: #component-sprinkles-threshold }
 
 * You find yourself setting up a lot of global event handlers, and it's getting cumbersome to organize them in your code. See [_Stimulus_](#stimulus) below;
 * You find yourself needing to set up event handlers on specific elements, and setting them up on the global document is no longer possible or elegant. See [_Stimulus_](#stimulus) below;
@@ -180,12 +184,14 @@ The magic of Stimulus, however, lies in this one trick:
 **As elements appear or disappears from the page's HTML, event handlers are automatically added and removed from the elements**. This spares you having to define global event handlers manually, and it makes Stimulus controllers a lot of fun to write.
 
 ### The treshold: When you might consider looking for something else
+{: #stimulus-threshold }
 
 * Making small edits to the HTML or refetching the HTML from the server-side is no longer feasible. For example, you have a complex form with a lot of permutations, and generating the HTML manually would be too much of a hassle. See [_Spot view-models_](#spot-view-models) below.
 * I just have a JSON API endpoint for that section of my app and it would be easiest if I didn't have to generate server-generated views. See [_Spot view-models_](#spot-view-models) or [_SPAs_](#spa) below.
 
 <aside markdown="1">
 ### Aside: Is Stimulus used in a production app?
+{: #stimulus-used-in-prod }
 
 Stimulus is used in the latest version of Basecamp. On Stimulus' own community forum, there's a [thread on community members' projects built for or with Stimulus][built-with-stimulus].
 
@@ -282,6 +288,7 @@ I know but haven't tried these other (even more modest) view-models: [Reef][reef
 
 <aside markdown="1">
 ### Making it comply with ideal #2 "The HTML on a page can be swapped out and replaced on a whim"
+{: #spot-view-models-with-ideal-swapping-html-on-a-whim }
 
 Here's the problem with view-models: they're a mesh of event handlers and data mutation hooks. If you clone the HTML they output, that HTML will no longer "work". That's because all the event handlers are no longer hooked up right. This begs the question: How can we uphold the ideal of "The HTML on a page can be swapped out and replaced on a whim"?
 
@@ -291,6 +298,7 @@ You could use Stimulus to coordinate loading or destroying the component. The St
 </aside>
 
 ### The treshold: When you might consider looking for something else
+{: #spot-view-models-threshold }
 
 * The compiled JavaScript from the `.vue` files is too heavy for our needs. Downgrade to a [_Stimulus_](#stimulus) component, as described above.
 * I'm ending up creating mostly empty pages that just contain the root HTML to mount my view-models on. I'm practically just using view-models for all of my page's elements. See [_SPAs_](#spa) below.
@@ -317,13 +325,14 @@ An SPA is the least modest JavaScript approach. Using it as the default approach
 
 <aside markdown="1">
 ### Aside: A note on server-generated HTML when all you have is a JSON API endpoint.
+{: #spa-not-necessary-for-json-api }
 
 It's worth noting that you _can_ have server-generated HTML even if all you have is a JSON API endpoint. A node.js or Go app would be super speedy. Define the routes for the HTML views you want outputted, and fuel your HTML views with the result of fetching the data from JSON API as if it was coming from an ORM or a database.
 </aside>
 
 <aside markdown="1">
 ### Aside: Stimulus-based server-generated SPAs
-{: #stimulus_reflex}
+{: #spa-server-generated-with-stimulus_reflex}
 
 I've recently seen this new Rails gem for creating stimulus-based server-generated single-page applications. It's called [stimulus_reflex][stimulus_reflex], and it has none of the baggage of the large-scale JavaScript-based view-model SPAs.
 
