@@ -18,16 +18,12 @@
   &.active {
     text-decoration: none;
   }
-}
-
-.navigation-link-ebook {
-  &, &:hover, &:active {
-    color: $primary-color;
-  }
-}
-
-.navigation-link-articles {
-  &, &:hover, &:active {
-    color: $secondary-color;
+  
+  text-decoration: none;
+  
+  .icon-arrow-right {
+    path {
+      stroke: $primary-color;
+    }
   }
 }
