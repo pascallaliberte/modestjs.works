@@ -12,6 +12,7 @@ Keeping the CSS modest means that it doesn't need to be optimized to work with h
 Keeping the HTML modest means that it's either rendered server-side, or it's scoped to be updated only in spots. MPAs (Multi-page apps) do just fine.
 
 ## Can You Make a Modest Single-page App?
+{: #modest-spa }
 
 If you're building an SPA to be like everyone else. Please reconsider.
 

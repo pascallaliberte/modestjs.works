@@ -20,6 +20,7 @@ In his book _[Principle-Centered Leadership][covey]_, Stephen Covey (of the book
 [covey]: https://www.goodreads.com/book/show/44644.Principle_Centered_Leadership
 
 ## The First Stage of Maturity: Dependence
+{: #dependence }
 
 (dependence →)
 
@@ -30,6 +31,7 @@ When someone operates in the dependency stage, their relationships are marked by
 But for those who catch themselves in a blame mindset and know that a change is required, the next step is to replace the word "them" with something else: "me".
 
 ## The Second Stage of Maturity: Independence
+{: #independence }
 
 (dependence →  independence →)
 
@@ -43,7 +45,8 @@ Upgrading just one of your relationships to an independence mindset (at least yo
 
 As much work as it requires, and beyond its benefits compared to the dependence mindset, the independence mindset is a _temporary_, transient stage. It's not mature _enough_. "Me" is better than "them" for owning blame instead of avoiding it, but "me" rings hollow, self-centred. The next stage has a better word.
 
-## The Third Stage of Maturity: Interdependence.
+## The Third Stage of Maturity: Interdependence
+{: #interdependence }
 
 "Us". In the most mature relationships, not only did the person conquer the temporary _independence_ stage, but that person has moved on to making other people's _environment_ more mature as a whole (for "us"), so people can navigate their way up from "them" to "me", and from "me" to "us" too.
 
@@ -52,6 +55,7 @@ As much work as it requires, and beyond its benefits compared to the dependence 
 If the interdependence mindset is about "us", how does that relate to today's software industry? In particular, how does it relate to JavaScript "dependencies"?
 
 ## Three Stages of JavaScript Dependencies
+{: #three-stages-of-js-dependencies }
 
 In the JavaScript world, here's what each stage look like:
 
