@@ -18,6 +18,6 @@ If you're building an SPA to be like everyone else. Please reconsider.
 
 If you're building an SPA because all you have is a JSON API endpoint, you can still build a multi-page app to consume that API and serve server-side generated HTML. Node.js or Go would be nice and speedy for this.
 
-If you've figured out a way to build an SPA that's the best approach to serve your users, that won't be broken in 6 months from dependencies breaking, that won't require a huge team to maintain, and that is clever in its simplicity, you're on the right track to make a modest SPA.
+**If you've figured out a way to build an SPA that's the best approach to serve your users, that won't be broken in 6 months from dependencies breaking, that won't require a huge team to maintain, and that is clever in its simplicity, you're on the right track to make a modest SPA.**
 
 So yes, you can make a modest SPA. But there are more modest ways to build an app.
