@@ -69,7 +69,7 @@ Just ensure that event handlers are specific and caught at the document level, a
 [bootstrap]: https://getbootstrap.com/
 </aside>
 
-### The treshold: When you might consider looking for something else
+### The threshold: When you might consider looking for something else
 {: #global-sprinkles-threshold }
 
 * You find yourself globally defining some sprinkles that are tied to a specific component, and you'd like to define that component it in its own `.js` file. See [_Component Sprinkles_](#component-sprinkles) below.
@@ -114,7 +114,7 @@ There are some packages that help ease the generation of HTML. I know of (but ha
 
 [hyperhtml]: https://viperhtml.js.org/hyper.html
 
-### The treshold: When you might consider looking for something else
+### The threshold: When you might consider looking for something else
 {: #component-sprinkles-threshold }
 
 * You find yourself setting up a lot of global event handlers, and it's getting cumbersome to organize them in your code. See [_Stimulus_](#stimulus) below;
@@ -183,7 +183,7 @@ The magic of Stimulus, however, lies in this one trick:
 
 **As elements appear or disappears from the page's HTML, event handlers are automatically added and removed from the elements**. This spares you having to define global event handlers manually, and it makes Stimulus controllers a lot of fun to write.
 
-### The treshold: When you might consider looking for something else
+### The threshold: When you might consider looking for something else
 {: #stimulus-threshold }
 
 * Making small edits to the HTML or refetching the HTML from the server-side is no longer feasible. For example, you have a complex form with a lot of permutations, and generating the HTML manually would be too much of a hassle. See [_Spot view-models_](#spot-view-models) below.
@@ -297,7 +297,7 @@ Say you want to use a date-picker component off the web, and it's been built usi
 You could use Stimulus to coordinate loading or destroying the component. The Stimulus component would be a wrapper around your component. Stimulus controllers have access to two special methods to help with this. `connect()` is called when the instance of the Stimulus component is detected being added on the page. `disconnect()` is called just before the Stimulus component will be removed from the page. To bring back a Vue component right back in the exact state it was in before it was destroyed, you could serialize the component's state and store it in a `data` attribute on the parent element, to be used again on `connect()`, when it re-appears (say when the Back button is pressed when using Turbolinks.) For nested Vue components, it's a little trickier, but there's a way to serialize all sub-components.
 </aside>
 
-### The treshold: When you might consider looking for something else
+### The threshold: When you might consider looking for something else
 {: #spot-view-models-threshold }
 
 * The compiled JavaScript from the `.vue` files is too heavy for our needs. Downgrade to a [_Stimulus_](#stimulus) component, as described above.

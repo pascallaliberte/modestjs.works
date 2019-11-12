@@ -49,4 +49,4 @@ These other questions are good too:
 
 If the company where you work is large, convoluted or immodest, the only way you're going to bring in more modesty is by talking the language of business with those questions above.
 
-But maybe the founders' values aren't tuned to yours. In which case, you won't move a needle there. Best to leave and find some execs at another company who are a better match.
+But maybe the founders' values aren't tuned to yours. In which case, you won't move a needle there. Best to find some execs at another company who are a better match.
