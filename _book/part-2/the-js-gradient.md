@@ -307,7 +307,7 @@ You could use Stimulus to coordinate loading or destroying the component. The St
 ## <acronym>SPAs</acronym> - Single-Page Applications
 {: #spa }
 
-A single-page application is typically ([see one notable exception in an aside below](#stimulus_reflex)) an all-JavaScript affair. Reactive view-models like Vue or React are the baseline. Whole pages are handled by view-models, and the browser's handling of clicks and the back button are overriden to serve different JavaScript-generated views to the user.
+A single-page application is typically ([see one notable exception in an aside below](#spa-server-generated-with-stimulus_reflex)) an all-JavaScript affair. Reactive view-models like Vue or React are the baseline. Whole pages are handled by view-models, and the browser's handling of clicks and the back button are overriden to serve different JavaScript-generated views to the user.
 
 The resulting JavaScript payloads are typically large in size, affecting the performance of the first page-load. Browsers compensate by using a lot of battery-power to compute the rendering of the views. And if you want to tweak performance, there are even more clever JavaScript methods to use, including view-models that are pre-rendered on the server-side and then hydrated using fresh JSON data. It's JavaScript all the way down.
 
