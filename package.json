@@ -58,7 +58,7 @@
     "anchor-js": "^4.2.0",
     "awesome-sass-easing": "^1.1.2",
     "bootstrap": "^4.1.3",
-    "js-yaml": "^3.12.0",
+    "js-yaml": "^3.13.1",
     "normalize.css": "^7.0.0"
   }
 }
