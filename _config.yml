@@ -38,12 +38,7 @@ defaults:
       path:    ""
       type:    "book"
     values:
-      sitemap: false
-  -
-    scope:
-      path:    "book/sample/**"
-    values:
-      sitemap: false
+      sitemap: true
 
 ### Google webmaster tools, Google Analytics, Doorbell and Cookie consent uncomment and put the API key
 #webmaster_verifications:
