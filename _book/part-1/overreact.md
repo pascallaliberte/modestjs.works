@@ -27,4 +27,6 @@ So maybe we're overreacting over React. Tread lightly. Go in it with your own pr
 
 Who knows? Maybe there's going to be another thing after React. And maybe you'll be the one who will be inventing it.
 
-_Credits to Jean-Claude Batista for the Overreact title idea._
+_Credits to [Jean-Claude Batista][jcbatista] for the Overreact title idea._
+
+[jcbatista]: https://twitter.com/jcbatista

@@ -19,3 +19,7 @@ To [_Jonathan Snook_][snook] for the link to the [crowdfunding of the developmen
 
 [snook]: https://twitter.com/snookca
 [picture-element]: https://www.indiegogo.com/projects/picture-element-implementation-in-blink/x/22249440#/
+
+To [_Jean-Claude Batista_][jcbatista] for the [Overreact](/book/part-1/overreact) chapter title.
+
+[jcbatista]: https://twitter.com/jcbatista
