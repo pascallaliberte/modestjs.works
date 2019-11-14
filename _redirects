@@ -1,4 +1,6 @@
 # Redirect with a 301
 /book/part-1/         /book/part-1/intro              301
 /book/part-2/         /book/part-2/intro              301
-/book/         /              301
+/book/                /book/part-1/intro              301
+
+/book/sample/first-example-3-ways-code-cart/  /book/part-2/same-ui-three-modest-ways/ 301
