@@ -5,7 +5,7 @@
 
 title: Modest JS Works
 email: pascal@pascallaliberte.me
-description: 
+description: "You were never sold on heavy-handed JavaScript approaches. Here's a case for keeping your JS modest."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://modestjs.works # the base hostname & protocol for your site, e.g. http://example.com
 theme_color: '#26B4A5'
