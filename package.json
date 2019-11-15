@@ -1,7 +1,7 @@
 {
-  "name": "jekyll-webpack-boilerplate",
+  "name": "Modest JS Works",
   "version": "1.0.0",
-  "description": "A boilerplate with Jekyll and Webpack to make the most performant static websites",
+  "description": "A book how to write modest JS",
   "main": "src/index.js",
   "repository": "git@github.com:sandoche/Jekyll-webpack-boilerplate.git",
   "author": "Sandoche Adittane <sandoche@gmail.com>",
