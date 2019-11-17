@@ -106,6 +106,37 @@ $reference-width-xl: 1024px;
   }
 }
 
+@media only screen and (min-width: ($reference-width-xl)) {
+  html {
+    font-size: 10px;
+  }
+  
+  body::before {
+    display: none;
+  }
+  
+  .body-wrapper {
+    width: $reference-width-xl;
+    margin: 0 auto;
+    
+    position: relative;
+    
+    &::before {
+      position: absolute;
+      content: '';
+      background-color: white;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -10;
+    }
+    
+    &::before {
+      width: calc(#{$reference-width-xl} - 25.7rem);
+    }
+  }
+}
+
 
 // Global
 
