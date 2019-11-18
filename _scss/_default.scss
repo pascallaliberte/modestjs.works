@@ -28,6 +28,7 @@ $reference-width-xs-until: 500px;
 $reference-width-md:    768px;
 $reference-width-md-until: 850px;
 $reference-width-xl: 1024px;
+$reference-width-xl-until: 1280px;
 
 // Mixin
 
@@ -106,9 +107,9 @@ $reference-width-xl: 1024px;
   }
 }
 
-@media only screen and (min-width: ($reference-width-xl)) {
+@media only screen and (min-width: ($reference-width-xl-until)) {
   html {
-    font-size: 10px;
+    font-size: get-adjusted-font-size-baseline($reference-width-xl-until, $reference-width-xl);
   }
   
   body::before {
@@ -116,7 +117,7 @@ $reference-width-xl: 1024px;
   }
   
   .body-wrapper {
-    width: $reference-width-xl;
+    width: $reference-width-xl-until;
     margin: 0 auto;
     
     position: relative;
@@ -132,7 +133,7 @@ $reference-width-xl: 1024px;
     }
     
     &::before {
-      width: calc(#{$reference-width-xl} - 25.7rem);
+      width: calc(#{$reference-width-xl-until} - 25.7rem);
     }
   }
 }

@@ -15,3 +15,7 @@ $rem-baseline: 10px;
   }
   @return ($rem-baseline / $reference-width * 100) + 0vw;
 }
+
+@function get-adjusted-font-size-baseline($new-reference-width, $base-reference-width) {
+  @return ($new-reference-width * $rem-baseline / $base-reference-width);
+}
