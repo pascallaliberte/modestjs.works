@@ -7,7 +7,7 @@ part: 1
 
 You could say React had modest beginnings.
 
-But there's not much that's modest about how [React][react] is being used now. Its community incentivized using it in convoluted ways, favouring taking over the whole page, it rewrites the browser's strengths, it requires babysitting the data model state to never fail and it evolves at break-code speed.
+But there's not much that's modest about how [React][react] is being used now. Its community incentivized using it in convoluted ways, favouring taking over the whole page. React rewrites the browser's strengths, requires babysitting the data model state to never fail and evolves at break-code speed.
 
 [react]: https://reactjs.org
 
