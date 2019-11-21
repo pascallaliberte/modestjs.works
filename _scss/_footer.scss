@@ -1,0 +1,24 @@
+.footer {
+  text-align: right;
+  display: block;
+  position: absolute;
+  right: 2em;
+  bottom: 2em;
+  font-family: $primary-font-family;
+  width: 100%;
+  
+  font-size: rem(12px);
+  
+  &, a {
+    color: mix($text-color, white, 50%);  
+  }
+}
+
+.footer-separator {
+  margin: 0 0.5em;
+  font-weight: bold;
+  font-size: rem(16);
+  line-height: rem(12px);
+  position: relative;
+  display: inline-block;
+}
