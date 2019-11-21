@@ -3,7 +3,7 @@ layout: book
 title: Introduction
 index: 0
 part: 1
-image: /assets/images/part-1-intro-javascript-culture-too-technical.jpg
+image: /assets/images/book/part-1-intro-javascript-culture-too-technical.jpg
 ---
 
 It seems to me that the JavaScript ecosystem got a little too technical. That seems like an odd thing to say for a programming language and its culture, but not all programming languages fall into that too-technical trap. Some programming languages have a different culture: Ruby stands for elegance. Swift and Go stand for speed and approachability.
