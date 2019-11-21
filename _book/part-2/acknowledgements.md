@@ -23,3 +23,9 @@ To [_Jonathan Snook_][snook] for the link to the [crowdfunding of the developmen
 To [_Jean-Claude Batista_][jcbatista] for the [Overreact](/book/part-1/overreact) chapter title.
 
 [jcbatista]: https://twitter.com/jcbatista
+
+---
+
+## Counter-Arguments
+
+[Harry Bachrach](https://twitter.com/HarryB) offered [some thorough rebuttals](https://twitter.com/HarryB/status/1197051954301566976) of aspects of Part 1 of the book. Previously, he also [made me realize that one part was especially demeaning to those starting their careers](https://twitter.com/HarryB/status/1196835846176927744), which I retracted.
