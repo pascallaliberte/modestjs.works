@@ -8,6 +8,12 @@
 <meta name="msapplication-navbutton-color" content="{{ site.theme_color }}">
 <meta name="apple-mobile-web-app-status-bar-style" content="{{ site.theme_color }}">
 
+<link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Lato:400,400i,700,700i|Noto+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+{% seo %}
+
 {% if page.layout == "post" -%}
   <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/modest-js-articles.jpg" />
 {% else -%}
@@ -18,12 +24,6 @@
   <meta property="og:image:width" content="400" />
   <meta property="og:image:height" content="400" />
 {%- endif %}
-
-<link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
-
-<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Lato:400,400i,700,700i|Noto+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
-
-{% seo %}
 
 {% if ((jekyll.environment == 'production' or jekyll.environment == 'pwa') and site.google_analytics) %}
 {% include google-analytics.html %}
