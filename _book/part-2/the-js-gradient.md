@@ -181,7 +181,7 @@ In the case above, the `input` is known as the `quantity` target by both the `ca
 
 The magic of Stimulus, however, lies in this one trick:
 
-**As elements appear or disappears from the page's HTML, event handlers are automatically added and removed from the elements**. This spares you having to define global event handlers manually, and it makes Stimulus controllers a lot of fun to write.
+**As elements appear or disappears from the page's HTML, event handlers are automatically added to and removed from the elements**. This spares you having to define global event handlers manually, and it makes Stimulus controllers a lot of fun to write.
 
 ### The threshold: When you might consider looking for something else
 {: #stimulus-threshold }
@@ -214,7 +214,7 @@ As stated under the "Threshold" sub-headers in the above strategies, spot view-m
 
 * Making small edits to the HTML or refetching the HTML from the server-side is no longer feasible. For example, you have a complex form with a lot of permutations, and generating the HTML manually would be too much of a hassle.
 
-My prefered toolkit for view-models is [Vue][vue]. Its community holds values that I find are more in line with mine. Vue is opinionated in its approach, and its approachable documentation is a sign of strong positions in favour of being a "Progressive JavaScript Framework". You can use it modest ways, and that's why I'm picking it here.
+My prefered toolkit for view-models is [Vue][vue]. Its community holds values that I find are more in line with mine. Vue is opinionated in its approach, and its approachable documentation is a sign of strong positions in favour of being a "Progressive JavaScript Framework". You can use it in modest ways, and that's why I'm picking it here.
 
 The root HTML for the instance of the view-model is simple: just an empty div.
 
