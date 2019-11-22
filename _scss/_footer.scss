@@ -2,10 +2,10 @@
   text-align: right;
   display: block;
   position: absolute;
-  right: 2em;
-  bottom: 2em;
+  right: rem(18px);
+  bottom: rem(18px);
   font-family: $primary-font-family;
-  width: 100%;
+  width: calc(100% - #{rem(36px) * 2});
   
   font-size: rem(12px);
   
