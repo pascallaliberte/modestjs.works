@@ -3,6 +3,7 @@ layout: book
 title: Upgrading (the idea of) dependencies
 index: 5
 part: 1
+image: /assets/images/book/part-1-upgrading-idea-of-dependencies.jpg
 ---
 
 Add a dependency to your project. How does it feel? 
