@@ -3,6 +3,7 @@ layout: book
 title: More than (Just) a Developer
 index: 9
 part: 1
+image: /assets/images/book/part-1-more-than-a-developer.jpg
 ---
 
 What's the opposite of modest? Pompous, huge, convoluted, inconsiderate, disproportionate, unbounded.
