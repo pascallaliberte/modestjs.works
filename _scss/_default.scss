@@ -19,9 +19,15 @@ $font-sm: 18px;
 $font-xs: 16px;
 
 $system-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-$primary-font-family: 'Lato', $system-font-family;
-$secondary-font-family: 'Noto Serif', serif;
-$mono-font-family: 'Source Code Pro', monospace, $system-font-family;
+
+$primary-font-fallback: $system-font-family;
+$primary-font-family: 'Lato', $primary-font-fallback;
+
+$secondary-font-fallback: serif;
+$secondary-font-family: 'Noto Serif', $secondary-font-fallback;
+
+$mono-font-fallback: monospace, $system-font-family;
+$mono-font-family: 'Source Code Pro', $mono-font-fallback;
 
 $reference-width-xs:    375px;
 $reference-width-xs-until: 500px;
