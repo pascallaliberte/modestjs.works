@@ -5,9 +5,13 @@
   h1 {
     color: $secondary-color;
     font-weight: normal;
-    font-family: $mono-font-family;
+    font-family: $mono-font-fallback;
     font-size: rem(24px);
     line-height: (33 / 32);
+    
+    .source-code-pro-400-loaded & {
+      font-family: $mono-font-family;
+    }
     
     margin-bottom: rem(44px);
     
@@ -18,15 +22,19 @@
   
   h2 {
     font-size: rem(18px);
-    line-height: (20/18);
     text-transform: uppercase;
+    line-height: (20/18);
     margin-top: rem(53px);
     margin-bottom: 1em;
-    font-family: $mono-font-family;
+    font-family: $mono-font-fallback;
     color: $secondary-color;
     letter-spacing: 0.03em;
     font-weight: bold;
     position: relative;
+    
+    .source-code-pro-700-loaded & {
+      font-family: $mono-font-family;
+    }
     
     &::before {
       position: absolute;
@@ -67,7 +75,6 @@
     position: relative;
     font-style: italic;
     padding-left: 1em;
-    font-family: $mono-font-family;
     
     &::before {
       position: absolute;

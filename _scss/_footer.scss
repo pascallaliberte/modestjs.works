@@ -4,13 +4,29 @@
   position: absolute;
   right: rem(18px);
   bottom: rem(18px);
-  font-family: $primary-font-family;
+  font-family: $primary-font-fallback;
   width: calc(100% - #{rem(36px) * 2});
+  max-width: rem(500px);
   
   font-size: rem(12px);
   
-  &, a {
+  &, a, button {
     color: mix($text-color, white, 50%);  
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  .lato-400-loaded.lato-400i-loaded.lato-700-loaded.lato-700i-loaded & {
+    font-family: $primary-font-family;
+  }
+  
+  button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    text-decoration: underline;
   }
 }
 

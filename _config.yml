@@ -41,6 +41,8 @@ defaults:
     values:
       sitemap: true
 
+show-font-toggle: false
+
 ### Google webmaster tools, Google Analytics, Doorbell and Cookie consent uncomment and put the API key
 #webmaster_verifications:
 #  google: verification_code

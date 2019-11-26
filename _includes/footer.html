@@ -3,5 +3,12 @@
   <span class="footer-separator">•</span>
   <a href="https://github.com/pascallaliberte/modestjs.works/tree/master/{{ page.path }}">View page on Github</a>
   <br>
-  This site doesn't track you, but Google Fonts, used here, probably does.
+  <div data-behavior="toggle-text-on-font-change" data-text-loaded="This site doesn't track you, but Google Fonts, used here, probably does." data-text-disabled="This site doesn't track you, except a single cookie to make sure fonts aren't loaded. Enabling fonts will add a tracker from Google Fonts.">
+  </div>
+  <button data-behavior="toggle-fonts" data-text-loaded="Disable fonts" data-text-disabled="Enable fonts"></button>
 </footer>
+{% if ((jekyll.environment != 'production') and site.show-font-toggle) %}
+<div class="dev-font-toggle" style="position: fixed; bottom: 0; right: 2em;">
+  <button data-behavior="toggle-fonts" data-text-loaded="Disable fonts" data-text-disabled="Enable fonts"></button>
+</div>
+{% endif %}
