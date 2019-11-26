@@ -103,23 +103,41 @@ const addBackPreviousFontClasses = () => {
   })
 }
 
+const isDisablePreference = () => {
+  if (!('localStorage' in window)) return false;
+  return window.localStorage.getItem('disable-fonts') == 'true'
+}
+
+const saveDisablePreference = () => {
+  if (!('localStorage' in window)) return;
+  window.localStorage.setItem('disable-fonts', true)
+}
+
+const clearDisablePreference = () => {
+  if (!('localStorage' in window)) return;
+  window.localStorage.removeItem('disable-fonts')
+}
+
 const loadFonts = () => {
+  clearDisablePreference()
   addStylesheet()
   if (!('fonts' in document)) return forceAddFontClasses();
   addBackPreviousFontClasses();
-}
-
-const removeFonts = () => {
-  removeStylesheet()
-  removeUnusedFontClasses()
 }
 
 const areFontsLoaded = () => {
   return null != document.head.querySelector(`link[href="${stylesheetUrl}"]`)
 }
 
+const removeFonts = () => {
+  removeStylesheet()
+  removeUnusedFontClasses()
+  saveDisablePreference()
+}
+
 const initFonts = () => {
   initAddFontClassesOnFontLoad()
+  if (isDisablePreference()) return
   loadFonts()
 }
 
