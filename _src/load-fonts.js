@@ -2,6 +2,7 @@ const fontList = `Source+Code+Pro:400,700|Lato:400,400i,700,700i|Noto+Serif:400,
 const stylesheetUrl = `https://fonts.googleapis.com/css?family=${fontList}`;
 
 let onFontLoadCallbacks = []
+let previousFontClasses = []
 
 const getFontShorthandsAndSlugsFromFontList = () => {
   let fonts = fontList.split('|')
@@ -15,7 +16,7 @@ const getFontShorthandsAndSlugsFromFontList = () => {
   let shortHandsAndSlugs = []
   fonts.forEach(font => {
     const fontNameSlug = font.name.replace(/\s/g, '-').toLowerCase()
-    const sizeAndFontName = `1em '${font.name}'`
+    const sizeAndFontName = ` 1em '${font.name}'`
     if (font.variantList.length == 0) {
       shortHandsAndSlugs.push({
         shorthand: sizeAndFontName,
@@ -58,10 +59,9 @@ const removeStylesheet = () => {
 const removeUnusedFontClasses = () => {
   const shortHandsAndSlugs = getFontShorthandsAndSlugsFromFontList()
   shortHandsAndSlugs.forEach(shortHandAndSlug => {
-    const {shorthand, slug} = shortHandAndSlug
-    if (!document.fonts.check(shorthand)) {
-      document.documentElement.classList.remove(slug)
-    }
+    const {slug} = shortHandAndSlug
+    document.documentElement.classList.remove(slug)
+    previousFontClasses.push(slug)
   })
 }
 
@@ -97,9 +97,16 @@ const forceAddFontClasses = () => {
   })
 }
 
+const addBackPreviousFontClasses = () => {
+  previousFontClasses.forEach(slug => {
+    document.documentElement.classList.add(slug)
+  })
+}
+
 const loadFonts = () => {
   addStylesheet()
-  if (!('fonts' in document)) forceAddFontClasses();
+  if (!('fonts' in document)) return forceAddFontClasses();
+  addBackPreviousFontClasses();
 }
 
 const removeFonts = () => {

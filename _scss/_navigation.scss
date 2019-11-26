@@ -7,11 +7,9 @@
   font-family: $mono-font-fallback;
   text-transform: uppercase;
   width: 100%;
-  line-height: ($default-line-height-ratio / $mono-font-fallback-line-height-delta);
   
   .source-code-pro-400-loaded.source-code-pro-700-loaded & {
     font-family: $mono-font-family;
-    line-height: ($default-line-height-ratio);
   }
 }
 

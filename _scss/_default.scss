@@ -24,6 +24,7 @@ $default-line-height-ratio: 25 / 18;
 
 $primary-font-fallback: $system-font-family;
 $primary-font-family: 'Lato', $primary-font-fallback;
+$primary-font-fallback-line-height-delta: 1.6;
 
 $secondary-font-fallback: serif;
 $secondary-font-family: 'Noto Serif', $secondary-font-fallback;
@@ -47,6 +48,20 @@ $reference-width-xl-until: 1280px;
   margin: auto;
 }
 
+main {
+  font-size: rem(18px);
+  font-weight: 400;
+  letter-spacing: -0.012em;
+  line-height: ($default-line-height-ratio);
+  .lato-400-loaded.lato-400i-loaded.lato-700-loaded.lato-700i-loaded & {
+    font-weight: 300;
+    letter-spacing: 0;
+    strong {
+      font-weight: 700;
+    }
+  }
+}
+
 @media only screen and (max-width: $reference-width-xs-until) {
   html {
     font-size: root-vw-font-size($reference-width-xs);
@@ -61,9 +76,6 @@ $reference-width-xl-until: 1280px;
     max-width: 100%;
     padding-left: $container-padding * 2;
     padding-right: $container-padding;
-    
-    font-size: rem(18px);
-    line-height: ($default-line-height-ratio);
     
     margin-bottom: rem(100px);
   }
@@ -83,9 +95,6 @@ $reference-width-xl-until: 1280px;
     width: rem(496px);
     margin-left: rem(200px);
     
-    font-size: rem(18px);
-    line-height: ($default-line-height-ratio);
-    
     margin-bottom: rem(100px);
   }
   
@@ -104,9 +113,6 @@ $reference-width-xl-until: 1280px;
     padding: rem(18px);
     width: rem(640px);
     margin-left: rem(257px);
-    
-    font-size: rem(18px);
-    line-height: ($default-line-height-ratio);
     
     margin-bottom: rem(100px);
   }
@@ -151,7 +157,7 @@ $reference-width-xl-until: 1280px;
 // Global
 
 body {
-  font-family: $primary-font-family;
+  font-family: $primary-font-fallback;
   color: $text-color;
   display: flex;
   min-height: 100vh;
@@ -167,6 +173,10 @@ body {
     right: 0;
     bottom: 0;
     z-index: -10;
+  }
+  
+  .lato-400-loaded.lato-400i-loaded.lato-700-loaded.lato-700i-loaded & {
+    font-family: $primary-font-family;
   }
 }
 
@@ -193,21 +203,17 @@ li {
 
 pre, code, kbd, samp {
   font-family: $mono-font-fallback;
-  line-height: ($default-line-height-ratio / $mono-font-fallback-line-height-delta);
   
   .source-code-pro-400-loaded.source-code-pro-700-loaded & {
     font-family: $mono-font-family;
-    line-height: ($default-line-height-ratio);
   }
 }
 
 blockquote {
   font-family: $mono-font-fallback;
-  line-height: ($default-line-height-ratio / $mono-font-fallback-line-height-delta);
   
   .source-code-pro-400-loaded.source-code-pro-700-loaded & {
     font-family: $mono-font-family;
-    line-height: ($default-line-height-ratio);
   }
 }
 

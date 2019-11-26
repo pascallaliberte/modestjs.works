@@ -28,7 +28,7 @@
     font-weight: normal;
     font-family: $mono-font-fallback;
     font-size: rem(24px);
-    line-height: (36 / 32 / $mono-font-fallback-line-height-delta);
+    line-height: (36 / 32);
     font-size: rem(32px);
     
     margin-bottom: rem(44px);
@@ -45,7 +45,7 @@
   
   h2 {
     font-size: rem(18px);
-    line-height: (20 / 18 / $mono-font-fallback-line-height-delta);
+    line-height: (20/18);
     text-transform: uppercase;
     margin-top: rem(53px);
     margin-bottom: 1em;
@@ -57,7 +57,6 @@
     
     .source-code-pro-700-loaded & {
       font-family: $mono-font-family;
-      line-height: (20/18);
     }
     
     &::before {
@@ -87,7 +86,11 @@
     font-weight: bold;
     font-size: rem(18px);
     color: $primary-dark-color;
-    font-family: $primary-font-family;
+    font-family: $primary-font-fallback;
+    
+    .lato-700-loaded.lato-700i-loaded & {
+      font-family: $primary-font-family;
+    }
   }
   
   img {
@@ -351,7 +354,6 @@
 
 .book-next-link-wrapper {
   font-family: $mono-font-fallback;
-  line-height: ($default-line-height-ratio / $mono-font-fallback-line-height-delta);
   a {
     color: $secondary-color;
     text-decoration: underline;
@@ -359,6 +361,5 @@
   
   .source-code-pro-400-loaded & {
     font-family: $mono-font-family;
-    line-height: ($default-line-height-ratio);
   }
 }

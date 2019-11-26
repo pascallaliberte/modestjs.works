@@ -4,7 +4,7 @@
   font-display: fallback;
   color: $primary-color;
   font-size: rem(26px);
-  line-height: (30 / 26 / $mono-font-fallback-line-height-delta);
+  line-height: (30 / 26);
   
   @media (min-width: $reference-width-md-until + 1px) {
     margin-right: rem(80px);
