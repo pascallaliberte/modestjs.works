@@ -2,3 +2,4 @@ _site
 assets
 optimization-fix-this-file-is-ignored.js
 load-fonts.js
+toggle-fonts.js

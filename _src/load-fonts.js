@@ -1,6 +1,8 @@
 const fontList = `Source+Code+Pro:400,700|Lato:400,400i,700,700i|Noto+Serif:400,400i,700,700i`
 const stylesheetUrl = `https://fonts.googleapis.com/css?family=${fontList}`;
 
+let onFontLoadCallbacks = []
+
 const getFontShorthandsAndSlugsFromFontList = () => {
   let fonts = fontList.split('|')
   fonts = fonts.map(font => {
@@ -63,6 +65,16 @@ const removeUnusedFontClasses = () => {
   })
 }
 
+const onFontLoad = (callback) => {
+  onFontLoadCallbacks.push(callback)
+}
+
+const notifyFontLoaded = () => {
+  onFontLoadCallbacks.forEach(callback => {
+    callback()
+  })
+}
+
 const initAddFontClassesOnFontLoad = () => {
   if (!('fonts' in document)) return;
   
@@ -72,6 +84,7 @@ const initAddFontClassesOnFontLoad = () => {
     const {shorthand, slug} = shortHandAndSlug
     document.fonts.load(shorthand).then(() => {
       document.documentElement.classList.add(slug)
+      notifyFontLoaded()
     })
   })
 }
@@ -100,12 +113,13 @@ const areFontsLoaded = () => {
 
 const initFonts = () => {
   initAddFontClassesOnFontLoad()
-  loadFonts()  
+  loadFonts()
 }
 
 export {
   initFonts,
   loadFonts,
   removeFonts,
-  areFontsLoaded
+  areFontsLoaded,
+  onFontLoad
 }

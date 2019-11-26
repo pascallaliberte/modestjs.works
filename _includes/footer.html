@@ -5,3 +5,8 @@
   <br>
   This site doesn't track you, but Google Fonts, used here, probably does.
 </footer>
+{% if (jekyll.environment != 'production') %}
+<div class="dev-font-toggle" style="position: fixed; bottom: 0; right: 2em;">
+  <button data-behavior="toggle-fonts" data-text-loaded="Disable fonts" data-text-disabled="Enable fonts"></button>
+</div>
+{% endif %}
