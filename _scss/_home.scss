@@ -1,12 +1,17 @@
 
 .intro {
-  font-family: $mono-font-family;
+  font-family: $mono-font-fallback;
   font-display: fallback;
   color: $primary-color;
   font-size: rem(26px);
-  line-height: (30 / 26);
+  line-height: (30 / 26 / 1.6);
   
   @media (min-width: $reference-width-md-until + 1px) {
     margin-right: rem(80px);
+  }
+  
+  .source-code-pro-400-loaded.source-code-pro-700-loaded & {
+    font-family: $mono-font-family;
+    line-height: (30 / 26);
   }
 }
