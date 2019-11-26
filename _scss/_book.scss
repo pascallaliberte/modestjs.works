@@ -26,28 +26,39 @@
   h1 {
     color: $secondary-color;
     font-weight: normal;
-    font-family: $mono-font-family;
+    font-family: $mono-font-fallback;
     font-size: rem(24px);
-    line-height: (36 / 32);
+    line-height: (36 / 32 / $mono-font-fallback-line-height-delta);
+    font-size: rem(32px);
     
     margin-bottom: rem(44px);
     
     @media (min-width: $reference-width-md-until + 1px) {
       margin-right: rem(80px);
     }
+    
+    .source-code-pro-400-loaded & {
+      font-family: $mono-font-family;
+      line-height: (36 / 32);
+    }
   }
   
   h2 {
     font-size: rem(18px);
-    line-height: (20/18);
+    line-height: (20 / 18 / $mono-font-fallback-line-height-delta);
     text-transform: uppercase;
     margin-top: rem(53px);
     margin-bottom: 1em;
-    font-family: $mono-font-family;
+    font-family: $mono-font-fallback;
     color: $primary-dark-color;
     letter-spacing: 0.03em;
     font-weight: bold;
     position: relative;
+    
+    .source-code-pro-700-loaded & {
+      font-family: $mono-font-family;
+      line-height: (20/18);
+    }
     
     &::before {
       position: absolute;
@@ -339,9 +350,15 @@
 }
 
 .book-next-link-wrapper {
-  font-family: $mono-font-family;
+  font-family: $mono-font-fallback;
+  line-height: ($default-line-height-ratio / $mono-font-fallback-line-height-delta);
   a {
     color: $secondary-color;
     text-decoration: underline;
+  }
+  
+  .source-code-pro-400-loaded & {
+    font-family: $mono-font-family;
+    line-height: ($default-line-height-ratio);
   }
 }

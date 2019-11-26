@@ -18,18 +18,4 @@
   a svg {
     display: inline;
   }
-  
-  .return-link {
-    display: inline-block;
-    font-family: $mono-font-family;
-    font-size: rem(12px);
-    line-height: 1;
-    color: black;
-    max-width: rem(70px);
-    margin-bottom: rem(15px);
-    
-    &:hover, &:focus {
-      color: $primary-color;
-    }
-  }
 }

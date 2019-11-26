@@ -5,14 +5,19 @@
   h1 {
     color: $primary-dark-color;
     font-weight: bold;
-    font-family: $mono-font-family;
+    font-family: $mono-font-fallback;
     font-size: rem(32px);
-    line-height: (33 / 32);
+    line-height: (33 / 32 / $mono-font-fallback-line-height-delta);
     
     margin-bottom: rem(44px);
     
     @media (min-width: $reference-width-md-until + 1px) {
       margin-right: rem(80px);
+    }
+    
+    .source-code-pro-700-loaded & {
+      font-family: $mono-font-family;
+      line-height: (33 / 32);
     }
   }
   
