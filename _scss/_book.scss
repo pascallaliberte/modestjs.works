@@ -18,9 +18,17 @@
   }
   
   article {
-    font-family: $secondary-font-family;
-    font-size: rem(16px);
-    line-height: 1.5;
+    font-family: $secondary-font-fallback;
+    font-size: rem(16px * 39 / 35);
+    line-height: 1.3;
+    letter-spacing: 0.018em;
+    
+    .noto-serif-400-loaded.noto-serif-400i-loaded.noto-serif-700-loaded.noto-serif-700i-loaded & {
+      font-family: $secondary-font-family;
+      font-size: rem(16px);
+      line-height: 1.5;
+      letter-spacing: 0;
+    }
   }
   
   h1 {
