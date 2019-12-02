@@ -3,6 +3,7 @@ layout: book
 title: A Modest Stack
 index: 15
 part: 1
+image: /assets/images/book/part-1-a-modest-stack.jpg
 ---
 
 When we're talking about modest JavaScript, we're mostly talking about modest CSS and modest HTML. When it comes to mobile native, that also means keeping to modest native elements too.

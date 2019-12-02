@@ -3,6 +3,7 @@ layout: book
 title: Overreact
 index: 23
 part: 1
+image: /assets/images/book/part-1-overreact.jpg
 ---
 
 In the 1990's, a common language used to teach Computer Science was Pascal. It was easy to understand, and so it taught people how to program.

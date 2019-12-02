@@ -3,6 +3,7 @@ layout: book
 title: What Are We Choosing React For?
 index: 12
 part: 1
+image: /assets/images/book/part-1-choosing-react-for.jpg
 ---
 
 You could say React had modest beginnings.
