@@ -56,7 +56,9 @@ Global sprinkles are the type to add general app-level behaviour enhancement usi
 
 Rails, in particular, has a suite of helpers in its `rails-ujs` (unobtrusive js) package, which qualifies here as a global sprinkles package.
 
-Other global sprinkles tools I've heard of but haven't used: [Trimmings][trimmings].
+Other global sprinkles tools I've heard of but haven't used: [Trimmings][trimmings], and [intercooler.js][intercooler] which for the moment still depends on jQuery.
+
+[intercooler]: http://intercoolerjs.org
 
 <aside markdown="1">
 ### Making it comply with ideal #2 "The HTML on a page can be swapped out and replaced on a whim"
