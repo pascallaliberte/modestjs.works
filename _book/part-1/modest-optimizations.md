@@ -3,6 +3,7 @@ layout: book
 title: Keeping Optimizations Modest
 index: 36
 part: 1
+image: /assets/images/book/part-1-modest-optimizations.jpg
 ---
 
 Let's define two terms:
