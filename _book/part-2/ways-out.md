@@ -40,7 +40,7 @@ A few ways out:
 {: .question#join-trends-for-visibility }
 
 * Consider persuading them to build something counter-cultural instead, and make a bigger splash with less effort.
-* Consider modelling a more modest approach by encouraging to have the debate out in the open on your blog or on dev.to. Have different members of your team publically voice their opinion, in reply to the main post, where you're announcing the discernment of tech stack that you're going through. It'll create some vulnerability, and surely attract like-minded people that also want to avoid playing the game everyone else is playing.
+* Consider modelling a more modest approach by encouraging to have the debate out in the open on your blog or on dev.to. Have different members of your team publicly voice their opinion, in reply to the main post, where you're announcing the discernment of tech stack that you're going through. It'll create some vulnerability, and surely attract like-minded people that also want to avoid playing the game everyone else is playing.
 
 ---
 
