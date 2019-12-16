@@ -3,6 +3,7 @@ layout: book
 title: The JS Gradient
 index: 54
 part: 2
+image: /assets/images/book/part-2-the-js-gradient.jpg
 ---
 
 If today, you were to start a new project _from scratch_, would you choose a front-end framework and build a single-page application? In some circles, that certainly feels like the default option. You get everything you need, you can build on what others have built, and it's trendy. As we've seen from the rest of the book, the default option isn't the _modest_ option. You're conjoined to a community that's ambitious, in a hurry and competitive. Your dependency stack is tall and brittle, and the toolkit's size is **disproportionate to your needs and the needs of your users**.

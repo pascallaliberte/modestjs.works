@@ -3,6 +3,7 @@ layout: book
 title: Building the Same UI Three Modest Ways
 index: 52
 part: 2
+image: /assets/images/book/part-2-same-ui-three-modest-ways.jpg
 ---
 
 As an example, let's take a shopping cart. Like this one:

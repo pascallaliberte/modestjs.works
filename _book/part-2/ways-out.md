@@ -3,6 +3,7 @@ layout: book
 title: Getting to More Modest Javascript
 index: 57
 part: 2
+image: /assets/images/book/part-2-ways-out.jpg
 ---
 
 Here are a few starting points and some ways out from each:
