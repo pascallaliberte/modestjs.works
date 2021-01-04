@@ -160,7 +160,7 @@ That `updateQuantity` method handles receiving an event fired at the document. T
 <div class="col text-right"
  data-controller="cart-quantity"
  data-action="cart-quantity-updated@document->cart-quantity#updateQuantity">
-  Cart: <strong data-target="cart-quantity.quantity">2</strong>
+  Cart: <strong data-cart-quantity-target="quantity">2</strong>
 </div>
 ```
 
@@ -181,13 +181,14 @@ The quantity field can then be defined to have two controllers handle its `chang
     <div data-controller="cart-item" class="cart-item">
       <!-- ... -->
       <input type="number" value="{{ item.quantity }}" 
-       data-target="cart-item.quantity cart.quantity"
+       data-cart-target="quantity"
+       data-cart-item-target="quantity"
        data-action="change->cart#updateSubtotal change->cart-item#updateSubtotal change->cart#broadcastNewQuantity"
        data-item-price="13.99"
        />
       <!-- ... -->
       <span class="cart-item-price-subtotal"
-       data-target="cart-item.subtotal">15.99</span>
+       data-cart-item-target="subtotal">15.99</span>
     </div>
     <!-- endfor -->
   </div>
@@ -195,7 +196,7 @@ The quantity field can then be defined to have two controllers handle its `chang
   Subtotal
   <!-- ... -->
   <span class="cart-subtotal-price-subtotal"
-   data-target="cart.subtotal" >139.99</span>
+   data-cart-target="subtotal" >139.99</span>
 </div>
 ```
 
