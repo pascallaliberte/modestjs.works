@@ -19,7 +19,7 @@ Or maybe it's that you need to spend too much time optimizing the JS payload on 
 
 A few ways out:
 
-* Consider rewriting just one part of your app using server-generated views with no front-end React. Maybe generate server-side React views, and just add a few sprinkles, maybe Turbolinks.
+* Consider rewriting just one part of your app using server-generated views with no front-end React. Maybe generate server-side React views, and just add a few sprinkles, maybe Stimulus.
 * Consider putting in a practice of vetting the packages your stack uses. See whether you'll likely have just a one-way relationship with the package, or whether your team can see itself investing back into that package. While you think this through, and for as long as you can, sit with the discomfort of knowing there are too many packages to give back to, and revisit the list frequently. Let that discomfort push you to invest back into the packages you use.
 * If your company isn't on an insane release schedule that's fueled by rounds of investing, consider getting your dev team to be more involved in scoping ([shaping][shapeup]) the product's features. Get some of the language of "bets" and "scope hammering" into your practice. Get a practice to interview your recent buyers to understand the job-to-be-done of your app, [the "job" for which they "hired" your app when they purchased it][jtbd-intro].
 
@@ -29,12 +29,11 @@ A few ways out:
 ## We're just about to start a project, and our team is a little too excited about using an SPA.
 {: .question#start-project }
 
-* Before you settle on your stack, consider challenging the rest of the team to build a small prototype using both approaches: an Single-Page Application and a Multi-Page Application using sprinkles, [Turbolinks][turbolinks] and [Stimulus][stimulus] (or [Trimmings][trimmings]).
+* Before you settle on your stack, consider challenging the rest of the team to build a small prototype using both approaches: a Single-Page Application and a Multi-Page Application using sprinkles, [Turbo Drive (née Turbolinks)][turbodrive] and [Stimulus][stimulus].
 * When you butt up against hypothetical "what if's" that nudge you to play safe and use the popular frameworks "just in case we get asked to do _this_", show your case that you can always add a page component that's more reactive if ever you need to, and how to wrap it properly to survive removal from/re-addition to the DOM.
 
-[turbolinks]: https://github.com/turbolinks/turbolinks
+[turbodrive]: https://turbo.hotwire.dev/handbook/drive
 [stimulus]: https://stimulusjs.org
-[trimmings]: https://postlight.com/trackchanges/back-to-html-introducing-trimmings
 
 ## Our team is intent on joining the trends so that they can build some open-source package for visibility.
 {: .question#join-trends-for-visibility }

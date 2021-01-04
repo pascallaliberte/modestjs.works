@@ -13,17 +13,9 @@ You've made your case to stay small, stay bounded, stay modest, but the whole we
 
 **You've looked for another technical solution to propose.**
 
-Right now, if you're looking for a technical solution that is a little more modest, it'll be something like server-side generated HTML, [Stimulus][stimulus] which is really nice, and view-models in a few spots. I go over these in `Part 2` of the book.
+Right now, if you're looking for a technical solution that is more modest, I'd go all-in for [Hotwire][hotwire], Basecamp's new Stimulus + Turbo (née Turbolinks) bundle they extracted from their Hey email service. If I'd need more interactivity in place, I'd instantiate some Spot view models using Stimulus in just the spots I'd need it.
 
-[stimulus]: https://stimulusjs.org
-
-And there are other approaches emerging. [Svelte][svelte] and [Reef][reef] are modest alternatives to the big view-models. [Trimmings][trimmings] is Stimulus-inspired and gives a reactive feel to server-side generated pages. Also, [Chris Ferdinandi][cferdinandi]'s been doing a lot of good teaching the basics of Vanilla JS, and selling the idea of the [Lean Web][leanweb].
-
-[reef]: https://github.com/cferdinandi/reef
-[cferdinandi]: https://gomakethings.com
-[leanweb]: https://leanweb.dev
-[svelte]: https://svelte.dev
-[trimmings]: https://postlight.com/trackchanges/back-to-html-introducing-trimmings
+[hotwire]: https://hotwire.dev
 
 **With time, these will change, and new approaches will come up**, and you might be inventing one. But you're not here for the JS-framework-du-jour.
 

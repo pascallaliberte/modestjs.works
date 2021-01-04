@@ -20,7 +20,7 @@ Part 1 was about general principles and some strong stances. We covered:
 First, some definitions:
 
 * **SPA** - a Single-Page Application is built by having all of the views built to be handled within the context of one page. The browser's default handling of URLs is handled within the same single-page instance of the application, and views are defined in rendered JavaScript. [React][react], by convention, builds SPAs. [Vue][vue] can also be configured with routing and other add-ons to build SPAs. Without optimizations, SPAs produce a large initial JavaScript payload (a large initial .js file to download), makes the browser use more CPU and therefore makes the application expend more energy. It's worth noting that some SPAs can be made to use server-generated views. We'll cover those in The JS Gradient.
-* **MPA** - by contrast, a Multi-Page Application is built to have each view served separately by the server. Some packages like [Turbolinks][turbolinks] (or its general technique called pjax) can be used to give the illusion of a snappy SPA-like experience, but at its core, the views are rendered on the server for each URL.
+* **MPA** - by contrast, a Multi-Page Application is built to have each view served separately by the server. Some approaches like [Hotwire][hotwire] (or a general technique called pjax) can be used to give the illusion of a snappy SPA-like experience, but at its core, the views are rendered on the server for each URL.
 * **event handlers** - the browser allows the dispatching of custom events which can be caught by event handlers, executing some code on reception. This is used to catch clicks on a button or a link, changes to input fields, to do something in response to any type of other user interaction, and as we'll see, to alert other components on the same page of changes.
 * **DOM** - The Document Object Model is the browser's internal representation of the elements rendered on the page: its HTML hierarchy, each element's attributes and properties, the relationship between elements (parent, child) and so on. Making changes to the DOM means making changes to the elements on a page and its properties. Typically small DOM changes include changing an element's class to change how it's presented, changing a value of an input field or changing the text in one element. Larger changes include changing whole page sections, lists or a series of its sub-items.
 * **view-model** - a way to define, using JavaScript, a template representing the HTML to be rendered along with some data properties that, when modified, morphs the HTML rendered from the template. [React][react] and [Vue][vue] are both designed as view-models.
@@ -30,4 +30,4 @@ First, some definitions:
 
 [react]: https://reactjs.org
 [vue]: https://vuejs.org
-[turbolinks]: https://github.com/turbolinks/turbolinks
+[hotwire]: https://hotwire.dev

@@ -6,6 +6,12 @@ part: 2
 image: /assets/images/book/part-2-the-js-gradient.jpg
 ---
 
+<aside markdown="1">
+Note: Since originally writing this chapter, a new pretty awesome and _can't-get-any-more-modest-js-than-that_ approach called [Hotwire][hotwire] has dropped. Created by Basecamp and bundling Stimulus as one of its core parts, Hotwire is hot. It's a worthy replacement for all of the JS Gradient approaches mentioned below, up and including Stimulus. On top of Hotwire, if you need to have components with more interaction, you can skip straight to the [_Spot view-models_](#spot-view-models) heading below, which I'd recommend you instantiate wrapped inside a Stimulus controller.
+
+[hotwire]: https://hotwire.dev
+</aside>
+
 If today, you were to start a new project _from scratch_, would you choose a front-end framework and build a single-page application? In some circles, that certainly feels like the default option. You get everything you need, you can build on what others have built, and it's trendy. As we've seen from the rest of the book, the default option isn't the _modest_ option. You're conjoined to a community that's ambitious, in a hurry and competitive. Your dependency stack is tall and brittle, and the toolkit's size is **disproportionate to your needs and the needs of your users**.
 
 There is, however, a way to build apps, today, using _modern_ JavaScript, but that uses more modest practices.
@@ -38,10 +44,8 @@ I call this approach **the JS Gradient**.
 At the outset, let's highlight some of the ideals we're shooting for:
 
 1. **We will prefer server-generated HTML.** Whether from a full page render, or if fetching just a fragment of the page, our approach will prefer server-generated HTML over JavaScript-generated HTML. As each additional level of JavaScript in the JS Gradient gets more involved, we'll move away from that ideal, but we'll start from that goal post.
-2. **The HTML on a page can be swapped out and replaced on a whim.** This will allow us to use techniques like `pjax` (replacing the whole body of a page with new HTML, which includes the [Turbolinks][turbolinks] library popular in Rails and Laravel apps) and `ahah` (asynchronous HTML over HTTP, to replace parts of a page with new HTML). This gives us the ability to make the app feel really fast, while keeping the HTML generated server-side. To do this, we'll need to make sure that when custom event handlers are added on specific elements, they should be removed when the element is removed from the page. The best way to do this is by specifying event handlers on the whole document and watching to see if they were fired by a certain element. The next best way is to use Stimulus, as it coordinates the addition and removal of event handlers as elements are detected as being added or removed from the page. This ideal disqualifies many jQuery-based plugins that don't offer a `destroy()` method. This also means that if the Back button is pressed, the UI gets brought back, in situations where pjax or Turbolinks is used. This means that if we're loading a spot view-model which sets up its own event handlers on elements, it needs to work when the previous page comes back into view. We'll talk about how to do that below.
+2. **The HTML on a page can be swapped out and replaced on a whim.** This will allow us to use techniques like `pjax` (replacing the whole body of a page with new HTML) and `ahah` (asynchronous HTML over HTTP, to replace parts of a page with new HTML). This gives us the ability to make the app feel really fast, while keeping the HTML generated server-side. To do this, we'll need to make sure that when custom event handlers are added on specific elements, they should be removed when the element is removed from the page. The best way to do this is by specifying event handlers on the whole document and watching to see if they were fired by a certain element. The next best way is to use Stimulus, as it coordinates the addition and removal of event handlers as elements are detected as being added or removed from the page. This ideal disqualifies many jQuery-based plugins that don't offer a `destroy()` method. This also means that if the Back button is pressed, the UI gets brought back, in situations where pjax is used. This means that if we're loading a spot view-model which sets up its own event handlers on elements, it needs to work when the previous page comes back into view. We'll talk about how to do that below.
 3. **We will favor the use of native Browser APIs.** The browser offers a ton of functionality for free and older browsers can be patched using polyfills. CSS and its cascade. The History API. Native form elements. Custom event handlers. `querySelector` and `querySelectorAll`. jQuery is actually fine. It's just not necessary anymore. Best to use the real stuff.
-
-[turbolinks]: https://github.com/turbolinks/turbolinks
 
 With those stated, let's start with the most lightweight of all JavaScript enhancements: global sprinkles. We'll then move our way up to more sophisticated JS approaches.
 
@@ -297,7 +301,7 @@ Here's the problem with view-models: they're a mesh of event handlers and data m
 
 Say you want to use a date-picker component off the web, and it's been built using a view-model.
 
-You could use Stimulus to coordinate loading or destroying the component. The Stimulus component would be a wrapper around your component. Stimulus controllers have access to two special methods to help with this. `connect()` is called when the instance of the Stimulus component is detected being added on the page. `disconnect()` is called just before the Stimulus component will be removed from the page. To bring a Vue component right back in the exact state it was in before it was destroyed, you could serialize the component's state and store it in a `data` attribute on the parent element, to be used again on `connect()`, when it re-appears (say when the Back button is pressed when using Turbolinks.) For nested Vue components, it's a little trickier, but there's a way to serialize all sub-components.
+You could use Stimulus to coordinate loading or destroying the component. The Stimulus component would be a wrapper around your component. Stimulus controllers have access to two special methods to help with this. `connect()` is called when the instance of the Stimulus component is detected being added on the page. `disconnect()` is called just before the Stimulus component will be removed from the page. To bring a Vue component right back in the exact state it was in before it was destroyed, you could serialize the component's state and store it in a `data` attribute on the parent element, to be used again on `connect()`, when it re-appears. For nested Vue components, it's a little trickier, but there's a way to serialize all sub-components.
 </aside>
 
 ### The threshold: When you might consider looking for something else
@@ -337,7 +341,9 @@ It's worth noting that you _can_ have server-generated HTML even if all you have
 ### Aside: Stimulus-based server-generated SPAs
 {: #spa-server-generated-with-stimulus_reflex}
 
-I've recently seen this new Rails gem for creating stimulus-based server-generated single-page applications. It's called [stimulus_reflex][stimulus_reflex], and it has none of the baggage of the large-scale JavaScript-based view-model SPAs.
+I mentioned [Hotwire][hotwire] in a note at the top of this chapter. Using its Turbo Drive (née Turbolinks) to replace full pages, its Turbo Frames and Turbo Stream to replace parts of the DOM using form responses, WebSockets or straight up polling, plus Stimulus for some extra interactivity in places, that'll get you pretty far in the pursuit of an SPA feel.
+
+There's a Rails gem for creating stimulus-based server-generated single-page applications. It's called [stimulus_reflex][stimulus_reflex], and it has none of the baggage of the large-scale JavaScript-based view-model SPAs. A good-sized community has formed around it, but it'll be feeling competition from Hotwire's entry into the scene.
 
 Another approach, which is modest and interesting, is called [Trimmings][trimmings].
 </aside>
