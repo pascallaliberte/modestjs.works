@@ -13,7 +13,7 @@ You've made your case to stay small, stay bounded, stay modest, but the whole we
 
 **You've looked for another technical solution to propose.**
 
-Right now, if you're looking for a technical solution that is more modest, I'd go all-in for [Hotwire][hotwire], Basecamp's new Stimulus + Turbo (née Turbolinks) bundle they extracted from their Hey email service. If I'd need more interactivity in place, I'd instantiate some Spot view models using Stimulus in just the spots I'd need it.
+Right now, if you're looking for a technical solution that is more modest, I'd go all-in for [Hotwire][hotwire], Basecamp's new Stimulus + Turbo (née Turbolinks) bundle they extracted from their Hey email service. If I'd need more interactivity in places, I'd instantiate some Spot view models using Stimulus in just the spots I'd need it.
 
 [hotwire]: https://hotwire.dev
 
