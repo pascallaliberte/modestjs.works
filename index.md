@@ -42,7 +42,7 @@ And there's a bit about your role in the broader organization you're working for
 In `Part 2`, I make the case for `The JS Gradient`, a principle whereby your app can have multiple coexisting modern JS approaches, starting from the global sprinkles to spot view-models to, yes, an SPA if that's really necessary. At each point in the gradient, you'll see when it's a good idea to go a step further toward heavier JavaScript, or otherwise don't.
 
 Hope this helps.  
-[Pascal Laliberté][me]
+<a rel="me" href="https://ruby.social/@pascallaliberte">Pascal Laliberté</a>
 
 [me]: /book/part-2/about-the-author/
 
